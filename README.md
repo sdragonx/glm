@@ -1,7 +1,7 @@
 # glm
 glm C++98 version.
 
-![logo](glm.png)
+![logo](glm.jpg)
 
 glm 原库作为图形基础库，下载使用量没有 cglm 多，其中一个原因就是，这个库竟然用 C++ 11。<br>
 这里是一个 C++ 98 版本的 glm 库，兼容比较老的编译器。<br>

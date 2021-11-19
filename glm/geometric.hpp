@@ -6,8 +6,8 @@
  2021-11-15 20:31:03
 
 */
-#ifndef GEOMETRIC_HPP_20211115203103
-#define GEOMETRIC_HPP_20211115203103
+#ifndef GLM_GEOMETRIC_HPP_20211115203103
+#define GLM_GEOMETRIC_HPP_20211115203103
 
 #include "detail/functions.hpp"
 #include "detail/functional.hpp"
@@ -147,5 +147,4 @@ vec<3, T> refract(const vec<3, T>& I, const vec<3, T>& N, T eta)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// GEOMETRIC_HPP_20211115203103
-
+#endif// GLM_GEOMETRIC_HPP_20211115203103

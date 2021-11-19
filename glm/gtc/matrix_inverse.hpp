@@ -6,8 +6,8 @@
  2021-11-13 21:47:19
 
 */
-#ifndef MATRIX_INVERSE_HPP_20211113214719
-#define MATRIX_INVERSE_HPP_20211113214719
+#ifndef GLM_MATRIX_INVERSE_HPP_20211113214719
+#define GLM_MATRIX_INVERSE_HPP_20211113214719
 
 #include <cgl/public.h>
 
@@ -17,4 +17,4 @@ namespace glm{
 }// end namespace glm
 }// end namespace cgl
 
-#endif// MATRIX_INVERSE_HPP_20211113214719
+#endif// GLM_MATRIX_INVERSE_HPP_20211113214719

@@ -6,8 +6,8 @@
  2021-11-15 20:21:42
 
 */
-#ifndef TYPE_TRAITS_HPP_20211115202142
-#define TYPE_TRAITS_HPP_20211115202142
+#ifndef GLM_TYPE_TRAITS_HPP_20211115202142
+#define GLM_TYPE_TRAITS_HPP_20211115202142
 
 #include "constants.hpp"
 
@@ -68,4 +68,4 @@ public:
 }// end namespace glm
 }// end namespace cgl
 
-#endif// TYPE_TRAITS_HPP_20211115202142
+#endif// GLM_TYPE_TRAITS_HPP_20211115202142

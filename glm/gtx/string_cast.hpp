@@ -6,8 +6,8 @@
  2021-11-15 23:31:37
 
 */
-#ifndef STRING_CAST_HPP_20211115233137
-#define STRING_CAST_HPP_20211115233137
+#ifndef GLM_STRING_CAST_HPP_20211115233137
+#define GLM_STRING_CAST_HPP_20211115233137
 
 #include <sstream>
 #include "io.hpp"
@@ -26,4 +26,4 @@ std::string to_string(const T& value)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// STRING_CAST_HPP_20211115233137
+#endif// GLM_STRING_CAST_HPP_20211115233137

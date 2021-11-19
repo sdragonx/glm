@@ -6,8 +6,8 @@
  2021-11-19 13:27:46
 
 */
-#ifndef LOGICAL_HPP_20211119132746
-#define LOGICAL_HPP_20211119132746
+#ifndef GLM_LOGICAL_HPP_20211119132746
+#define GLM_LOGICAL_HPP_20211119132746
 
 #include "../vec.hpp"
 #include "functional.hpp"
@@ -131,4 +131,4 @@ GLM_API vec<N, T> Not(const vec<N, T>& v)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// LOGICAL_HPP_20211119132746
+#endif// GLM_LOGICAL_HPP_20211119132746

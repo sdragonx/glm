@@ -6,8 +6,8 @@
  2021-10-19 15:41:30
 
 */
-#ifndef VEC2_HPP_20211019154130
-#define VEC2_HPP_20211019154130
+#ifndef GLM_VEC2_HPP_20211019154130
+#define GLM_VEC2_HPP_20211019154130
 
 #include "vec.hpp"
 
@@ -134,4 +134,4 @@ GLM_VEC2_OPERATOR_COMMON(/);
 }// end namespace glm
 }// end namespace cgl
 
-#endif// VEC2_HPP_20211019154130
+#endif// GLM_VEC2_HPP_20211019154130

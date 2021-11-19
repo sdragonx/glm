@@ -6,8 +6,8 @@
  2019-05-30 02:06:08
 
 */
-#ifndef MAT3_HPP_20190530020608
-#define MAT3_HPP_20190530020608
+#ifndef GLM_MAT3_HPP_20190530020608
+#define GLM_MAT3_HPP_20190530020608
 
 #include "mat.hpp"
 
@@ -416,4 +416,4 @@ GLM_API mat<3, 3, T> inverse(const mat<3, 3, T>& m)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// MAT3_HPP_20190530020608
+#endif// GLM_MAT3_HPP_20190530020608

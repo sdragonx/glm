@@ -6,8 +6,8 @@
  2021-11-16 11:17:21
 
 */
-#ifndef FUNCTIONAL_HPP_20211116111721
-#define FUNCTIONAL_HPP_20211116111721
+#ifndef GLM_FUNCTIONAL_HPP_20211116111721
+#define GLM_FUNCTIONAL_HPP_20211116111721
 
 #include "../vec.hpp"
 
@@ -235,4 +235,4 @@ GLM_API vec<4, T> compute(PFN pfn, const vec<4, T>& v1, const vec<4, T>& v2, T x
 }// end namespace glm
 }// end namespace cgl
 
-#endif// FUNCTIONAL_HPP_20211116111721
+#endif// GLM_FUNCTIONAL_HPP_20211116111721

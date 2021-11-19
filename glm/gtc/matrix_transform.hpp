@@ -6,8 +6,8 @@
  2021-11-13 21:44:55
 
 */
-#ifndef MATRIX_TRANSFORM_HPP_20211113214455
-#define MATRIX_TRANSFORM_HPP_20211113214455
+#ifndef GLM_MATRIX_TRANSFORM_HPP_20211113214455
+#define GLM_MATRIX_TRANSFORM_HPP_20211113214455
 
 #include "../vec.hpp"
 #include "../mat.hpp"
@@ -292,4 +292,4 @@ GLM_API mat<4, 4, T> lookAt(const vec<3, T>& eye, const vec<3, T>& center, const
 }// end namespace glm
 }// end namespace cgl
 
-#endif// MATRIX_TRANSFORM_HPP_20211113214455
+#endif// GLM_MATRIX_TRANSFORM_HPP_20211113214455

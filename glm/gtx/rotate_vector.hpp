@@ -6,8 +6,8 @@
  2021-11-15 23:21:06
 
 */
-#ifndef ROTATE_VECTOR_HPP_20211115232106
-#define ROTATE_VECTOR_HPP_20211115232106
+#ifndef GLM_ROTATE_VECTOR_HPP_20211115232106
+#define GLM_ROTATE_VECTOR_HPP_20211115232106
 
 #include "../vec.hpp"
 
@@ -34,4 +34,4 @@ vec<2, T> rotate( const vec<2, T>& v, T angle )
 }// end namespace glm
 }// end namespace cgl
 
-#endif// ROTATE_VECTOR_HPP_20211115232106
+#endif// GLM_ROTATE_VECTOR_HPP_20211115232106

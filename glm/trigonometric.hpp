@@ -6,8 +6,8 @@
  2021-11-13 23:08:05
 
 */
-#ifndef TRIGONOMETRIC_HPP_20211113230805
-#define TRIGONOMETRIC_HPP_20211113230805
+#ifndef GLM_TRIGONOMETRIC_HPP_20211113230805
+#define GLM_TRIGONOMETRIC_HPP_20211113230805
 
 #include <cmath>
 #include "detail/constants.hpp"
@@ -84,16 +84,16 @@ GLM_API T atan(const T& x, const T& y)
 template<size_t N, typename T>
 GLM_API vec<N, T> sin(const vec<N, T>& v)
 {
-    return compute<T>(v, sin<T>);
+    return compute<T>(sin<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> cos(const vec<N, T>& v)
 {
-    return compute<T>(v, cos<T>);
+    return compute<T>(cos<T>, v);
 }
 
 }// end namespace glm
 }// end namespace cgl
 
-#endif// TRIGONOMETRIC_HPP_20211113230805
+#endif// GLM_TRIGONOMETRIC_HPP_20211113230805

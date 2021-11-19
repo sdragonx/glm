@@ -6,8 +6,8 @@
  2021-11-16 00:44:41
 
 */
-#ifndef TYPE_PTR_HPP_20211116004441
-#define TYPE_PTR_HPP_20211116004441
+#ifndef GLM_TYPE_PTR_HPP_20211116004441
+#define GLM_TYPE_PTR_HPP_20211116004441
 
 #include "../mat4.hpp"
 
@@ -53,4 +53,4 @@ const T* value_ptr(const mat<CX, CY, T>& m)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// TYPE_PTR_HPP_20211116004441
+#endif// GLM_TYPE_PTR_HPP_20211116004441

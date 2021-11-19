@@ -6,8 +6,8 @@
  2021-11-18 18:29:20
 
 */
-#ifndef SIMD_HPP_20211118182920
-#define SIMD_HPP_20211118182920
+#ifndef GLM_SIMD_HPP_20211118182920
+#define GLM_SIMD_HPP_20211118182920
 
 #include "../detail/setup.hpp"
 
@@ -24,4 +24,4 @@
 
 #endif
 
-#endif// SIMD_HPP_20211118182920
+#endif// GLM_SIMD_HPP_20211118182920

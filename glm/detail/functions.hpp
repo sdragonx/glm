@@ -13,8 +13,8 @@ roundEven
 matrixCompMult
 
 */
-#ifndef FUNCTIONS_HPP_20211116114517
-#define FUNCTIONS_HPP_20211116114517
+#ifndef GLM_FUNCTIONS_HPP_20211116114517
+#define GLM_FUNCTIONS_HPP_20211116114517
 
 #include "functional.hpp"
 
@@ -242,4 +242,4 @@ GLM_API vec<N, T> sqrt(const vec<N, T>& v)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// FUNCTIONS_HPP_20211116114517
+#endif// GLM_FUNCTIONS_HPP_20211116114517

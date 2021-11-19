@@ -6,8 +6,8 @@
  2021-10-19 14:21:37
 
 */
-#ifndef VEC_HPP_20211019142137
-#define VEC_HPP_20211019142137
+#ifndef GLM_VEC_HPP_20211019142137
+#define GLM_VEC_HPP_20211019142137
 
 #include "detail/constants.hpp"
 
@@ -40,4 +40,4 @@ public:
 }// end namespace glm
 }// end namespace cgl
 
-#endif// VEC_HPP_20211019142137
+#endif// GLM_VEC_HPP_20211019142137

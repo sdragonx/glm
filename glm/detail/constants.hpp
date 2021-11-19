@@ -6,8 +6,8 @@
  2021-11-13 22:10:26
 
 */
-#ifndef CONSTANTS_HPP_20211113221026
-#define CONSTANTS_HPP_20211113221026
+#ifndef GLM_CONSTANTS_HPP_20211113221026
+#define GLM_CONSTANTS_HPP_20211113221026
 
 #include "setup.hpp"
 
@@ -67,4 +67,4 @@ const T constants<T>::inv_radians = T(57.295779513082320876798);
 }// end namespace glm
 }// end namespace cgl
 
-#endif// CONSTANTS_HPP_20211113221026
+#endif// GLM_CONSTANTS_HPP_20211113221026

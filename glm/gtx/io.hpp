@@ -6,8 +6,8 @@
  2021-11-15 20:12:42
 
 */
-#ifndef IO_HPP_20211115201242
-#define IO_HPP_20211115201242
+#ifndef GLM_IO_HPP_20211115201242
+#define GLM_IO_HPP_20211115201242
 
 #include <iostream>
 
@@ -60,4 +60,4 @@ std::ostream& operator<<(std::ostream& os, const mat<4, 4, T>& m)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// IO_HPP_20211115201242
+#endif// GLM_IO_HPP_20211115201242

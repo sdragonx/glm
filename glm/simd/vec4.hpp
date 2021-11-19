@@ -6,8 +6,8 @@
  2021-11-18 18:26:40
 
 */
-#ifndef SIMD_VEC4_HPP_20211118182640
-#define SIMD_VEC4_HPP_20211118182640
+#ifndef GLM_SIMD_VEC4_HPP_20211118182640
+#define GLM_SIMD_VEC4_HPP_20211118182640
 
 #include "simd.hpp"
 #include "../vec.hpp"
@@ -77,4 +77,4 @@ GLM_INS_API void vec4_mul(const float* v1, float n, float* dest)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// SIMD_VEC4_HPP_20211118182640
+#endif// GLM_SIMD_VEC4_HPP_20211118182640

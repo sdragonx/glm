@@ -6,8 +6,8 @@
  2021-11-13 21:48:49
 
 */
-#ifndef MATRIX_PROJECTION_HPP_20211113214849
-#define MATRIX_PROJECTION_HPP_20211113214849
+#ifndef GLM_MATRIX_PROJECTION_HPP_20211113214849
+#define GLM_MATRIX_PROJECTION_HPP_20211113214849
 
 #include "matrix_transform.hpp"
 
@@ -111,4 +111,4 @@ vec<3, T> unProject(const vec<3, T>& win,
 }// end namespace glm
 }// end namespace cgl
 
-#endif// MATRIX_PROJECTION_HPP_20211113214849
+#endif// GLM_MATRIX_PROJECTION_HPP_20211113214849

@@ -86,4 +86,6 @@ typedef mat<4, 4, float> mat4x4;
 }// end namespace glm
 }// end namespace cgl
 
+using namespace cgl;
+
 #endif// GLM_HPP_20211115201400

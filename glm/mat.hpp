@@ -1,13 +1,13 @@
 /*
  Copyright (c) 2005-2020 sdragonx (mail:sdragonx@foxmail.com)
 
- matrix.base.hpp
+ matrix.hpp
 
  2020-10-27 02:05:52
 
 */
-#ifndef MATRIX_BASE_HPP_20201027020552
-#define MATRIX_BASE_HPP_20201027020552
+#ifndef GLM_MATRIX_HPP_20201027020552
+#define GLM_MATRIX_HPP_20201027020552
 
 #include "vec.hpp"
 
@@ -72,4 +72,4 @@ public:
 }// end namespace glm
 }// end namespace cgl
 
-#endif// MATRIX_BASE_HPP_20201027020552
+#endif// GLM_MATRIX_HPP_20201027020552

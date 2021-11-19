@@ -6,8 +6,8 @@
  2021-11-18 17:28:23
 
 */
-#ifndef SIMD_MAT4_HPP_20211118172823
-#define SIMD_MAT4_HPP_20211118172823
+#ifndef GLM_SIMD_MAT4_HPP_20211118172823
+#define GLM_SIMD_MAT4_HPP_20211118172823
 
 #include "simd.hpp"
 
@@ -146,4 +146,4 @@ GLM_INS_API void mat4_transform(const float* m, const float* v, float* dest)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// SIMD_MAT4_HPP_20211118172823
+#endif// GLM_SIMD_MAT4_HPP_20211118172823

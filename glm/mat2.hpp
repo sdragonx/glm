@@ -6,8 +6,8 @@
  2020-03-31 13:14:12
 
 */
-#ifndef MAT2_HPP_20200331131412
-#define MAT2_HPP_20200331131412
+#ifndef GLM_MAT2_HPP_20200331131412
+#define GLM_MAT2_HPP_20200331131412
 
 #include "mat.hpp"
 #include "gtc/matrix_transform.hpp"
@@ -422,7 +422,7 @@ GLM_API mat<2, 3, T> scale(const mat<2, 3, T>& m, const vec<2, T>& v)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// MAT2_HPP_20200331131412
+#endif// GLM_MAT2_HPP_20200331131412
 
 /*
 

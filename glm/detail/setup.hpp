@@ -6,8 +6,8 @@
  2021-11-15 22:13:55
 
 */
-#ifndef SETUP_HPP_20211115221355
-#define SETUP_HPP_20211115221355
+#ifndef GLM_SETUP_HPP_20211115221355
+#define GLM_SETUP_HPP_20211115221355
 
 #include <algorithm>
 #include <cmath>
@@ -67,4 +67,4 @@ template<length_t CX, length_t CY, typename T> class mat;
 }// end namespace glm
 }// end namespace cgl
 
-#endif// SETUP_HPP_20211115221355
+#endif// GLM_SETUP_HPP_20211115221355

@@ -6,8 +6,8 @@
  2018-04-15 19:45:04
 
 */
-#ifndef MAT4_HPP_20180415194504
-#define MAT4_HPP_20180415194504
+#ifndef GLM_MAT4_HPP_20180415194504
+#define GLM_MAT4_HPP_20180415194504
 
 #include "mat.hpp"
 #include "simd/mat4.hpp"
@@ -540,4 +540,4 @@ GLM_API glm::vec<4, T> viewPosition(const glm::mat<4, 4, T>& m)
 }// end namespace glm
 }// end namespace cgl
 
-#endif// MAT4_HPP_20180415194504
+#endif// GLM_MAT4_HPP_20180415194504

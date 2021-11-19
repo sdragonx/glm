@@ -14,6 +14,10 @@ Here is a C + + 98 version of GLM library, compatible with older compilers.<br>
 Although C + + 11 is more convenient than C + + 98 in the implementation of some methods, it is not completely realized.<br>
 Well, if you have any questions, please correct them!<br>
 <br>
+# 说明<br>
+程序部分，使用的是 C++ 98 标准，所有代码在 cgl::glm 命名空间下。<br>
+glm.hpp 里面使用了 using namespace cgl 来暴露 glm 的命名空间。<br>
+精简了结构，代码量更少，部分代码执行率比原版要快一些。<br>
 
 # 更新历史<br>
 ### 2021-11-20

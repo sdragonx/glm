@@ -49,7 +49,7 @@
     typedef value_type* pointer;\
     typedef const value_type* const_pointer;\
     typedef value_type& refrence;\
-    typedef const value_type& const_refrence;\
+    typedef const value_type& const_refrence;
 
 #endif
 

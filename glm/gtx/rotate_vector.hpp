@@ -29,7 +29,100 @@ vec<2, T> rotate( const vec<2, T>& v, T angle )
     );
 }
 
+//
+// vec<3, T> rotate( ... )
+//
 
+template<typename T>
+vec<3, T> rotate( const vec<3, T>& v, T angle, const vec<3, T>& axis )
+{
+    return rotate(angle, axis) * vec<4, T>(v, constant<T>::one);
+}
+
+template<typename T>
+vec<3, T> rotateX( const vec<3, T>& v, T angle )
+{
+    T cosine = cos(angle);
+    T sine = sin(angle);
+
+    return vec<3, T>(
+        v.x,
+        v.y * cosine - v.z * sine,
+        v.y * sine + v.z * cosine);
+}
+
+template<typename T>
+vec<3, T> rotateY( const vec<3, T>& v, T angle )
+{
+    T cosine = cos(angle);
+    T sine = sin(angle);
+
+    return vec<3, T>(
+        v.x * cosine + v.z * sine,
+        v.y,
+		-v.x * sine + v.z * cosine);
+}
+
+template<typename T>
+vec<3, T> rotateZ( const vec<3, T>& v, T angle )
+{
+    T cosine = cos(angle);
+    T sine = sin(angle);
+
+    return vec<3, T>(
+        v.x * cosine - v.y * sine,
+		v.x * sine + v.y * cosine,
+        v.z);
+}
+
+//
+// vec<4, T> rotate( ... )
+//
+
+template<typename T>
+vec<4, T> rotate( const vec<4, T>& v, T angle, const vec<3, T>& axis )
+{
+    return rotate(angle, axis) * v;
+}
+
+template<typename T>
+vec<4, T> rotateX( const vec<4, T>& v, T angle )
+{
+    T cosine = cos(angle);
+    T sine = sin(angle);
+
+    return vec<4, T>(
+        v.x,
+        v.y * cosine - v.z * sine,
+        v.y * sine + v.z * cosine,
+        v.w);
+}
+
+template<typename T>
+vec<4, T> rotateY( const vec<4, T>& v, T angle )
+{
+    T cosine = cos(angle);
+    T sine = sin(angle);
+
+    return vec<4, T>(
+        v.x * cosine + v.z * sine,
+        v.y,
+		-v.x * sine + v.z * cosine,
+        v.w);
+}
+
+template<typename T>
+vec<4, T> rotateZ( const vec<4, T>& v, T angle )
+{
+    T cosine = cos(angle);
+    T sine = sin(angle);
+
+    return vec<4, T>(
+        v.x * cosine - v.y * sine,
+		v.x * sine + v.y * cosine,
+        v.z,
+        v.w);
+}
 
 }// end namespace glm
 }// end namespace cgl

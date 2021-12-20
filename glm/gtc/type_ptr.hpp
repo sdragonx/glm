@@ -11,7 +11,8 @@
 
 #include "../mat4.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 template<typename T>
@@ -51,6 +52,5 @@ const T* value_ptr(const mat<CX, CY, T>& m)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_TYPE_PTR_HPP_20211116004441

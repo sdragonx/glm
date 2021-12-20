@@ -12,9 +12,9 @@
 #include "../vec.hpp"
 #include "functional.hpp"
 
-namespace cgl{
-namespace glm{
 
+
+namespace glm{
 
 //
 // Logical operation
@@ -129,6 +129,5 @@ GLM_API vec<N, T> Not(const vec<N, T>& v)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_LOGICAL_HPP_20211119132746

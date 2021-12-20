@@ -14,7 +14,8 @@
 #include "../vec.hpp"
 #include "../mat.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 template<size_t N, typename T>
@@ -58,6 +59,5 @@ std::ostream& operator<<(std::ostream& os, const mat<4, 4, T>& m)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_IO_HPP_20211115201242

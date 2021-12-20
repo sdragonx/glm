@@ -12,7 +12,8 @@
 #include <sstream>
 #include "io.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 template<typename T>
@@ -24,6 +25,5 @@ std::string to_string(const T& value)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_STRING_CAST_HPP_20211115233137

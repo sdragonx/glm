@@ -11,7 +11,8 @@
 
 #include "../vec.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 //
@@ -125,6 +126,5 @@ vec<4, T> rotateZ( const vec<4, T>& v, T angle )
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_ROTATE_VECTOR_HPP_20211115232106

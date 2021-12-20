@@ -11,7 +11,8 @@
 
 #include "../vec.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 /******************************************************************************
@@ -233,6 +234,5 @@ GLM_API vec<4, T> compute(PFN pfn, const vec<4, T>& v1, const vec<4, T>& v2, T x
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_FUNCTIONAL_HPP_20211116111721

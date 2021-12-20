@@ -11,10 +11,10 @@
 
 #include <cgl/public.h>
 
-namespace cgl{
+
+
 namespace glm{
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_MATRIX_INVERSE_HPP_20211113214719

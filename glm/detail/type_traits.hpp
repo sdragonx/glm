@@ -11,7 +11,8 @@
 
 #include "constants.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 
@@ -66,6 +67,5 @@ public:
 
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_TYPE_TRAITS_HPP_20211115202142

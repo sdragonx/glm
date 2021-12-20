@@ -19,14 +19,15 @@ matrixCompMult
 #include "functional.hpp"
 
 #ifdef min
-#undef min
+    #undef min
 #endif
 
 #ifdef max
-#undef max
+    #undef max
 #endif
 
-namespace cgl{
+
+
 namespace glm{
 
 template<typename T>
@@ -240,6 +241,5 @@ GLM_API vec<N, T> sqrt(const vec<N, T>& v)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_FUNCTIONS_HPP_20211116114517

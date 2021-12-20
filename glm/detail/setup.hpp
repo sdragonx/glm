@@ -13,6 +13,21 @@
 #include <cmath>
 #include <limits>
 
+#define GLM_VERSION_MAJOR			0
+#define GLM_VERSION_MINOR			1
+#define GLM_VERSION_PATCH			0
+#define GLM_VERSION_REVISION		0
+#define GLM_VERSION					100
+#define GLM_VERSION_MESSAGE			"cgl.glm: version 0.1.0.0"
+
+#define GLM_SETUP_INCLUDED			GLM_VERSION
+
+///////////////////////////////////////////////////////////////////////////////////
+// Active states
+
+#define GLM_DISABLE		0
+#define GLM_ENABLE		1
+
 //
 // platform
 //
@@ -56,7 +71,8 @@
 #define GLM_API inline
 #define GLM_INS_API static
 
-namespace cgl{
+
+
 namespace glm{
 
 typedef size_t length_t;
@@ -65,6 +81,5 @@ template<length_t N, typename T> class vec;
 template<length_t CX, length_t CY, typename T> class mat;
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_SETUP_HPP_20211115221355

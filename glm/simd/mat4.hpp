@@ -11,7 +11,8 @@
 
 #include "simd.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 //
@@ -144,6 +145,5 @@ GLM_INS_API void mat4_transform(const float* m, const float* v, float* dest)
 #endif// GLM_ENABLE_INSTRUCTIONS
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_SIMD_MAT4_HPP_20211118172823

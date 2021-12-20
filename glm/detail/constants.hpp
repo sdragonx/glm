@@ -11,7 +11,6 @@
 
 #include "setup.hpp"
 
-namespace cgl{
 namespace glm{
 
 //
@@ -62,9 +61,13 @@ const T constants<T>::radians = T(0.017453292519943295769);
 template<typename T>
 const T constants<T>::inv_radians = T(57.295779513082320876798);
 
-
+// T pi()
+template<typename T>
+inline T pi()
+{
+    return static_cast<T>(constants<T>::pi);
+}
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_CONSTANTS_HPP_20211113221026

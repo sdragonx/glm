@@ -14,7 +14,8 @@
 #include "../detail/type_traits.hpp"
 #include "../trigonometric.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 //
@@ -290,6 +291,5 @@ GLM_API mat<4, 4, T> lookAt(const vec<3, T>& eye, const vec<3, T>& center, const
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_MATRIX_TRANSFORM_HPP_20211113214455

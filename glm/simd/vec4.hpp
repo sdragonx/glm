@@ -12,7 +12,8 @@
 #include "simd.hpp"
 #include "../vec.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 template<typename T>
@@ -75,6 +76,5 @@ GLM_INS_API void vec4_mul(const float* v1, float n, float* dest)
 #endif// GLM_ENABLE_INSTRUCTIONS
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_SIMD_VEC4_HPP_20211118182640

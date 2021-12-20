@@ -11,7 +11,8 @@
 
 #include "matrix_transform.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 
@@ -109,6 +110,5 @@ vec<3, T> unProject(const vec<3, T>& win,
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_MATRIX_PROJECTION_HPP_20211113214849

@@ -12,7 +12,8 @@
 #include "mat.hpp"
 #include "simd/mat4.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 //
@@ -538,6 +539,5 @@ GLM_API glm::vec<4, T> viewPosition(const glm::mat<4, 4, T>& m)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_MAT4_HPP_20180415194504

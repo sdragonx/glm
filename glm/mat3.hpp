@@ -11,7 +11,8 @@
 
 #include "mat.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 //
@@ -414,6 +415,5 @@ GLM_API mat<3, 3, T> inverse(const mat<3, 3, T>& m)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_MAT3_HPP_20190530020608

@@ -11,7 +11,8 @@
 
 #include "vec.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 #define GLM_VEC2_OPERATION(op)\
@@ -132,6 +133,5 @@ GLM_VEC2_OPERATOR_COMMON(/);
 #undef GLM_VEC2_OPERATOR_COMMON
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_VEC2_HPP_20211019154130

@@ -12,7 +12,8 @@
 #include "vec.hpp"
 #include "simd/vec4.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 #define GLM_VEC4_OPERATION(op)\
@@ -143,6 +144,5 @@ GLM_VEC4_OPERATOR_COMMON(/);
 #undef GLM_VEC4_OPERATOR_COMMON
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_VEC4_HPP_20211019154150

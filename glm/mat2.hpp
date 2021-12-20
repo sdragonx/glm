@@ -12,7 +12,8 @@
 #include "mat.hpp"
 #include "gtc/matrix_transform.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 
@@ -284,7 +285,7 @@ public:
             zero, zero
         };
 
-        mat2x3_mul(data, mat, data);
+        mat2x3_mul(data(), mat, data());
 
         return *this;
     }
@@ -420,7 +421,6 @@ GLM_API mat<2, 3, T> scale(const mat<2, 3, T>& m, const vec<2, T>& v)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_MAT2_HPP_20200331131412
 

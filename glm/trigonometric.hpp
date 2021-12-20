@@ -13,7 +13,8 @@
 #include "detail/constants.hpp"
 #include "detail/functional.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 //
@@ -94,6 +95,5 @@ GLM_API vec<N, T> cos(const vec<N, T>& v)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_TRIGONOMETRIC_HPP_20211113230805

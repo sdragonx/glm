@@ -11,7 +11,8 @@
 
 #include "detail/constants.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 template<length_t N, typename T>
@@ -38,6 +39,5 @@ public:
 };
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_VEC_HPP_20211019142137

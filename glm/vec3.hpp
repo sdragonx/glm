@@ -13,7 +13,6 @@
 
 
 
-namespace cgl{
 namespace glm{
 
 #define GLM_VEC3_OPERATION(op)\
@@ -136,6 +135,5 @@ GLM_VEC3_OPERATOR_COMMON(/);
 #undef GLM_VEC3_OPERATOR_COMMON
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_VEC3_HPP_20211019154138

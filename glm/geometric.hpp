@@ -14,7 +14,8 @@
 #include "trigonometric.hpp"
 #include "vec.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 //
@@ -145,6 +146,5 @@ vec<3, T> refract(const vec<3, T>& I, const vec<3, T>& N, T eta)
 }
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_GEOMETRIC_HPP_20211115203103

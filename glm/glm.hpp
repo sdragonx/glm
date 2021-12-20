@@ -10,6 +10,7 @@
 #define GLM_HPP_20211115201400
 
 #include "detail/setup.hpp"
+#include "detail/constants.hpp"
 
 #include "vec2.hpp"
 #include "vec3.hpp"
@@ -25,7 +26,8 @@
 #include "gtx/io.hpp"
 #include "gtx/string_cast.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 typedef vec<2, float> vec2;
@@ -84,8 +86,5 @@ typedef mat<4, 3, float> mat4x3;
 typedef mat<4, 4, float> mat4x4;
 
 }// end namespace glm
-}// end namespace cgl
-
-using namespace cgl;
 
 #endif// GLM_HPP_20211115201400

@@ -11,7 +11,8 @@
 
 #include "vec.hpp"
 
-namespace cgl{
+
+
 namespace glm{
 
 template<length_t CX, length_t CY, typename T>
@@ -70,6 +71,5 @@ public:
 };
 
 }// end namespace glm
-}// end namespace cgl
 
 #endif// GLM_MATRIX_HPP_20201027020552

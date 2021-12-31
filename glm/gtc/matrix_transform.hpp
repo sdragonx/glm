@@ -120,12 +120,13 @@ public:
         T h = top - bottom;
         T d = zFar - zNear;
         return mat<4, 4, T>(
-            two / w,             zero,                 zero,               zero,
-            zero,                two / h,              zero,               zero,
-            zero,                zero,                -two / d,            zero,
+             two / w,             zero,                zero,               zero,
+             zero,                two / h,             zero,               zero,
+             zero,                zero,               -two / d,            zero,
             -(right + left) / w, -(top + bottom) / h, -(zFar + zNear) / d, one);
     }
 
+    // glu: gluOrtho2D(left, right, bottom, top, -1.0, 1.0)
     static GLM_API mat<4, 4, T> ortho(T left, T right, T bottom, T top)
     {
         T w = right - left;
@@ -144,9 +145,9 @@ public:
         vec<3, T> u(cross(s, f));               // up
 
         return mat<4, 4, T>(
-            s.x, s.y, s.z, zero,
-            u.x, u.y, u.z, zero,
-            f.x, f.y, f.z, zero,
+            s.x, u.x, f.x, zero,
+            s.y, u.y, f.y, zero,
+            s.z, u.z, f.z, zero,
             -dot(s, eye), -dot(u, eye), -dot(f, eye), one);
     }
 
@@ -157,9 +158,9 @@ public:
         vec<3, T> u(cross(s, f));               // up
 
         return mat<4, 4, T>(
-            s.x, s.y, s.z, zero,
-            u.x, u.y, u.z, zero,
-            -f.x, -f.y, -f.z, zero,
+            s.x, u.x, -f.x, zero,
+            s.y, u.y, -f.y, zero,
+            s.z, u.z, -f.z, zero,
             -dot(s, eye), -dot(u, eye), dot(f, eye), one);
     }
 };

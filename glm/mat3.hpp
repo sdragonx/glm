@@ -158,22 +158,12 @@ GLM_API void mat3_transpose_copy(const T* m, T* dest)
 //
 
 template<typename T>
-GLM_API bool mat3_determinant(const T* m, T& d)
+GLM_API T mat3_determinant(const T* m)
 {
-    d = m[0][0] * m[1][1] * m[2][2] -
-        m[0][0] * m[1][2] * m[2][1] - 
-        m[0][1] * m[1][0] * m[2][2] + 
-        m[0][1] * m[1][2] * m[0][2] +
-        m[0][2] * m[1][0] * m[2][1] -
-        m[0][2] * m[1][1] * m[2][0];
-
-    if (abs(d) < constants<T>::epsilon) {
-        return false;
-    }
-
-    d = constants<T>::one / d;
-
-    return true;
+    return
+        + m[0] * (m[4] * m[8] - m[7] * m[5])
+        - m[3] * (m[1] * m[8] - m[7] * m[2])
+        + m[6] * (m[1] * m[5] - m[4] * m[2]);
 }
 
 //
@@ -184,23 +174,25 @@ template<typename T>
 GLM_API bool mat3_inverse(const T* m, T* dest)
 {
     T product[9];
-    T d;
+    T d = mat3_determinant(m);
 
-    if (mat3_determinant(m, d) == false) {
+    if (abs(d) < constants<T>::epsilon) {
         return false;
     }
 
-    product[0] =  m[8] * m[4] - m[7] * m[5];
-    product[1] = -m[8] * m[2] - m[7] * m[2];
-    product[2] =  m[5] * m[2] - m[4] * m[2];
-    product[3] = -m[8] * m[3] - m[6] * m[5];
-    product[4] =  m[8] * m[0] - m[6] * m[2];
-    product[5] = -m[5] * m[0] - m[3] * m[2];
-    product[6] =  m[7] * m[3] - m[6] * m[4];
-    product[7] = -m[7] * m[0] - m[6] * m[1];
-    product[8] =  m[4] * m[0] - m[3] * m[1];
+    d = constants<T>::one / d;
 
-    mat3_mul(product, d, dest);
+    product[0] = +(m[4] * m[8] - m[7] * m[5]) * d;
+    product[1] = -(m[1] * m[8] - m[7] * m[2]) * d;
+    product[2] = +(m[1] * m[5] - m[4] * m[2]) * d;
+    product[3] = -(m[3] * m[8] - m[6] * m[5]) * d;
+    product[4] = +(m[0] * m[8] - m[6] * m[2]) * d;
+    product[5] = -(m[0] * m[5] - m[3] * m[2]) * d;
+    product[6] = +(m[3] * m[7] - m[6] * m[4]) * d;
+    product[7] = -(m[0] * m[7] - m[6] * m[1]) * d;
+    product[8] = +(m[0] * m[4] - m[3] * m[1]) * d;
+
+    memcpy(dest, product, sizeof(product));
 
     return true;
 }

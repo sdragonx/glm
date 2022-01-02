@@ -61,12 +61,23 @@ const T constants<T>::radians = T(0.017453292519943295769);
 template<typename T>
 const T constants<T>::inv_radians = T(57.295779513082320876798);
 
+//
+// functions
+//
+
 // T pi()
 template<typename T>
 inline T pi()
 {
     return static_cast<T>(constants<T>::pi);
 }
+
+template<typename T>
+inline T epsilon()
+{
+    return constants<T>::epsilon;
+}
+
 
 }// end namespace glm
 

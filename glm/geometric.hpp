@@ -14,8 +14,6 @@
 #include "trigonometric.hpp"
 #include "vec.hpp"
 
-
-
 namespace glm{
 
 //

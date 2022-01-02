@@ -401,12 +401,12 @@ public:
         return m[i];
     }
 
-    refrence operator()(size_t x, size_t y)
+    reference operator()(size_t x, size_t y)
     {
         return m[y][x];
     }
 
-    const_refrence operator()(size_t x, size_t y)const
+    const_reference operator()(size_t x, size_t y)const
     {
         return m[y][x];
     }

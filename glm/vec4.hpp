@@ -93,15 +93,15 @@ public:
 public:
     vec<4, T>() : x(), y(), z(), w() { /*void*/ }
 
-    vec<4, T>(const_refrence scalar) : x(scalar), y(scalar), z(scalar), w(scalar) { /*void*/ }
-    vec<4, T>(const_refrence vx, const_refrence vy, const_refrence vz, const_refrence vw) :
+    vec<4, T>(const_reference scalar) : x(scalar), y(scalar), z(scalar), w(scalar) { /*void*/ }
+    vec<4, T>(const_reference vx, const_reference vy, const_reference vz, const_reference vw) :
         x(vx), y(vy), z(vz), w(vw) { /*void*/ }
 
     vec<4, T>(const this_type& v) :
         x(v.x), y(v.y), z(v.z), w(v.w) { /*void*/ }
 
     template<typename X>
-    vec<4, T>(const vec<2, X>& v, const_refrence vz = value_type(), const_refrence vw = value_type()) :
+    vec<4, T>(const vec<2, X>& v, const_reference vz = value_type(), const_reference vw = value_type()) :
         x(v.x), y(v.y), z(vz), w(vw) { /*void*/ }
 
     template<typename X>
@@ -109,7 +109,7 @@ public:
         x(v1.x), y(v1.y), z(v2.x), w(v2.y) { /*void*/ }
 
     template<typename X>
-    vec<4, T>(const vec<3, X>& v, const_refrence vw = value_type()) :
+    vec<4, T>(const vec<3, X>& v, const_reference vw = value_type()) :
         x(v.x), y(v.y), z(v.z), w(vw) { /*void*/ }
 
     template<typename X>
@@ -118,8 +118,8 @@ public:
 
     length_t length()const { return ELEMENTS; }
 
-    refrence operator[](size_t i) { return m[i]; }
-    const_refrence operator[](size_t i)const { return m[i]; }
+    reference operator[](size_t i) { return m[i]; }
+    const_reference operator[](size_t i)const { return m[i]; }
 
     pointer data() { return m; }
     const_pointer data()const { return m; }

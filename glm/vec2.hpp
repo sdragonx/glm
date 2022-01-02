@@ -106,8 +106,8 @@ public:
 
     length_t length()const { return ELEMENTS; }
 
-    refrence operator[](size_t i) { return m[i]; }
-    const_refrence operator[](size_t i)const { return m[i]; }
+    reference operator[](size_t i) { return m[i]; }
+    const_reference operator[](size_t i)const { return m[i]; }
 
     pointer data() { return m; }
     const_pointer data()const { return m; }

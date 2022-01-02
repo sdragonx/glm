@@ -90,12 +90,12 @@ public:
 
 public:
     vec<3, T>() : x(), y(), z() { /*void*/ }
-    vec<3, T>(const_refrence scalar) : x(scalar), y(scalar), z(scalar) { /*void*/ }
-    vec<3, T>(const_refrence vx, const_refrence vy, const_refrence vz) :
+    vec<3, T>(const_reference scalar) : x(scalar), y(scalar), z(scalar) { /*void*/ }
+    vec<3, T>(const_reference vx, const_reference vy, const_reference vz) :
         x(vx), y(vy), z(vz) { /*void*/ }
 
     template<typename X>
-    vec<3, T>(const vec<2, X>& v, const_refrence vz = value_type()) :
+    vec<3, T>(const vec<2, X>& v, const_reference vz = value_type()) :
         x(v.x), y(v.y), z(vz) { /*void*/ }
 
     template<typename X>
@@ -108,8 +108,8 @@ public:
 
     length_t length()const { return ELEMENTS; }
 
-    refrence operator[](size_t i) { return m[i]; }
-    const_refrence operator[](size_t i)const { return m[i]; }
+    reference operator[](size_t i) { return m[i]; }
+    const_reference operator[](size_t i)const { return m[i]; }
 
     pointer data() { return m; }
     const_pointer data()const { return m; }

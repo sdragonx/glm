@@ -50,7 +50,7 @@ template<typename T>
 const T constants<T>::two = T(2);
 
 template<typename T>
-const T constants<T>::epsilon = std::numeric_limits<T>::epsilon();
+const T constants<T>::epsilon = T(std::numeric_limits<T>::epsilon());
 
 template<typename T>
 const T constants<T>::pi = T(3.141592653589793238462);

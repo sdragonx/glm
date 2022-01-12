@@ -18,7 +18,7 @@
 #define GLM_VERSION_PATCH			0
 #define GLM_VERSION_REVISION		0
 #define GLM_VERSION					100
-#define GLM_VERSION_MESSAGE			"cgl.glm: version 0.1.0.0"
+#define GLM_VERSION_MESSAGE			"glm version 0.1.0.0"
 
 #define GLM_SETUP_INCLUDED			GLM_VERSION
 

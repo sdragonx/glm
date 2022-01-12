@@ -169,10 +169,10 @@ public:
 // identity
 //
 
-template<typename genT>
-GLM_API genT identity()
+template<typename genType>
+GLM_API genType identity()
 {
-    return type_traits<genT, typename genT::value_type>::identity();
+    return type_traits<genType, typename genType::value_type>::identity();
 }
 
 //
@@ -188,7 +188,13 @@ GLM_API mat<4, 4, T> translate(const vec<3, T>& v)
 template<typename T>
 GLM_API mat<4, 4, T> translate(const mat<4, 4, T>& m, const vec<3, T>& v)
 {
+    #if 1
+    mat<4, 4, T> product(m);
+    product[3] = m[0] * v[0] + m[1] * v[1] + m[2] * v[2] + m[3];
+    return product;
+    #else
     return m * translate<T>(v);
+    #endif
 }
 
 //

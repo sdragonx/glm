@@ -85,13 +85,13 @@ GLM_API T atan(const T& x, const T& y)
 template<size_t N, typename T>
 GLM_API vec<N, T> sin(const vec<N, T>& v)
 {
-    return compute<T>(sin<T>, v);
+    return compute<T, N, T>(sin<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> cos(const vec<N, T>& v)
 {
-    return compute<T>(cos<T>, v);
+    return compute<T, N, T>(cos<T>, v);
 }
 
 }// end namespace glm

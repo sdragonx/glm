@@ -65,11 +65,40 @@ const T constants<T>::inv_radians = T(57.295779513082320876798);
 // functions
 //
 
-// T pi()
+template<typename T>
+inline T zero()
+{
+    return constants<T>::zero;
+}
+
+template<typename T>
+inline T half()
+{
+    return constants<T>::half;
+}
+
+template<typename T>
+inline T one()
+{
+    return constants<T>::one;
+}
+
+template<typename T>
+inline T two()
+{
+    return constants<T>::two;
+}
+
 template<typename T>
 inline T pi()
 {
-    return static_cast<T>(constants<T>::pi);
+    return constants<T>::pi;
+}
+
+template<typename T>
+inline T half_pi()
+{
+    return constants<T>::pi * constants<T>::half;
 }
 
 template<typename T>

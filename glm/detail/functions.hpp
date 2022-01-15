@@ -141,7 +141,7 @@ GLM_API T sqrt(const T& value)
 template<size_t N, typename T>
 GLM_API vec<N, T> abs(const vec<N, T>& v)
 {
-    return compute<T>(abs<T>, v);
+    return compute<T, N, T>(abs<T>, v);
 }
 
 template<size_t N, typename T>
@@ -153,91 +153,91 @@ GLM_API vec<N, T> ceil(const vec<N, T>& v)
 template<size_t N, typename T>
 GLM_API vec<N, T> clamp(const vec<N, T>& v, T minVal, T maxVal)
 {
-    return compute<T>(clamp<T>, v, minVal, maxVal);
+    return compute<T, N, T>(clamp<T>, v, minVal, maxVal);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> exp(const vec<N, T>& v)
 {
-    return compute<T>(exp<T>, v);
+    return compute<T, N, T>(exp<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> exp2(const vec<N, T>& v)
 {
-    return compute<T>(exp2<T>, v);
+    return compute<T, N, T>(exp2<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> floor(const vec<N, T>& v)
 {
-    return compute<T>(floor<T>, v);
+    return compute<T, N, T>(floor<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> fract(const vec<N, T>& v)
 {
-    return compute<T>(fract<T>, v);
+    return compute<T, N, T>(fract<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> max(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<T>(max<T>, x, y);
+    return compute<T, N, T>(max<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> mid(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<T>(mid<T>, x, y);
+    return compute<T, N, T>(mid<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> min(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<T>(min<T>, x, y);
+    return compute<T, N, T>(min<T>, x, y);
 }
 
 template<size_t N, typename T, typename A>
 GLM_API vec<N, T> mix(const vec<N, T>& x, const vec<N, T>& y, A a)
 {
-    return compute<T>(mix<T, A>, x, y, a);
+    return compute<T, N, T>(mix<T, A>, x, y, a);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> mod(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<T>(mod<T>, x, y);
+    return compute<T, N, T>(mod<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> modf(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<T>(modf<T>, x, y);
+    return compute<T, N, T>(modf<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> pow(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<T>(pow<T>, x, y);
+    return compute<T, N, T>(pow<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API int round(const vec<N, T>& v)
 {
-    return compute<T>(round<T>, v);
+    return compute<T, N, T>(round<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> sign(const vec<N, T>& v)
 {
-    return compute<T>(sign<T>, v);
+    return compute<T, N, T>(sign<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> sqrt(const vec<N, T>& v)
 {
-    return compute<T>(sqrt<T>, v);
+    return compute<T, N, T>(sqrt<T>, v);
 }
 
 }// end namespace glm

@@ -70,37 +70,37 @@ GLM_API bool notEqual(const T& x, const T& y)
 template<size_t N, typename T>
 GLM_API vec<N, bool> lessThan(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<bool>(lessThan<T>, x, y);
+    return compute<bool, N, T>(lessThan<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, bool> lessThanEqual(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<bool>(lessThanEqual<T>, x, y);
+    return compute<bool, N, T>(lessThanEqual<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, bool> greaterThan(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<bool>(greaterThan<T>, x, y);
+    return compute<bool, N, T>(greaterThan<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, bool> greaterThanEqual(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<bool>(greaterThan<T>, x, y);
+    return compute<bool, N, T>(greaterThan<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, bool> equal(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<bool>(equal<T>, x, y);
+    return compute<bool, N, T>(equal<T>, x, y);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, bool> notEqual(const vec<N, T>& x, const vec<N, T>& y)
 {
-    return compute<bool>(notEqual<T>, x, y);
+    return compute<bool, N, T>(notEqual<T>, x, y);
 }
 
 template<size_t N, typename T>
@@ -128,7 +128,7 @@ GLM_API bool all(const vec<N, T>& v)
 template<size_t N, typename T>
 GLM_API vec<N, bool> Not(const vec<N, T>& v)
 {
-    return compate<bool>(Not<T>, v);
+    return compute<bool, N, T>(Not<T>, v);
 }
 
 }// end namespace glm

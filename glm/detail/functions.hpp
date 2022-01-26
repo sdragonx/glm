@@ -42,8 +42,8 @@ GLM_API T ceil(const T& value)
     return static_cast<T>(std::ceil(static_cast<double>(value)));
 }
 
-template<typename T>
-GLM_API T clamp(const T& value, const T& minVal, const T& maxVal)
+template<typename T, typename argT>
+GLM_API T clamp(const T& value, const argT& minVal, const argT& maxVal)
 {
     return min<T>(max<T>(value, minVal), maxVal);
 }
@@ -153,7 +153,7 @@ GLM_API vec<N, T> ceil(const vec<N, T>& v)
 template<size_t N, typename T>
 GLM_API vec<N, T> clamp(const vec<N, T>& v, T minVal, T maxVal)
 {
-    return compute<T, N, T>(clamp<T>, v, minVal, maxVal);
+    return compute<T, N, T>(clamp<T, T>, v, minVal, maxVal);
 }
 
 template<size_t N, typename T>

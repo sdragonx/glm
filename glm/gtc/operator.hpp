@@ -14,18 +14,18 @@
 
 namespace glm{
 
+template<size_t N, typename T>
+GLM_API bool operator == (const vec<N, T>& x, const vec<N, T>& y)
+{
+    return compare(equal<T>, x, y);
+}
+
+template<size_t N, typename T>
+GLM_API bool operator != (const vec<N, T>& x, const vec<N, T>& y)
+{
+    return !compare(equal<T>, x, y);
+}
+
 }// end namespace glm
-
-template<size_t N, typename T>
-GLM_API bool operator == (const glm::vec<N, T>& x, const glm::vec<N, T>& y)
-{
-    return glm::compare(glm::equal<T>, x, y);
-}
-
-template<size_t N, typename T>
-GLM_API bool operator != (const glm::vec<N, T>& x, const glm::vec<N, T>& y)
-{
-    return !glm::compare(glm::equal<T>, x, y);
-}
 
 #endif// GLM_OPEARTOR_HPP_20220111155446

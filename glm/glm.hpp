@@ -10,8 +10,8 @@
 #define GLM_HPP_20211115201400
 
 #include "detail/setup.hpp"
-#include "detail/functions.hpp"
 #include "detail/functional.hpp"
+#include "detail/functions.hpp"
 #include "detail/logical.hpp"
 #include "detail/type_traits.hpp"
 
@@ -19,12 +19,20 @@
 #include "vec3.hpp"
 #include "vec4.hpp"
 
-#include "mat2.hpp"
-#include "mat3.hpp"
-#include "mat4.hpp"
+#include "mat2x2.hpp"
+#include "mat2x3.hpp"
+#include "mat2x4.hpp"
+#include "mat3x2.hpp"
+#include "mat3x3.hpp"
+#include "mat3x4.hpp"
+#include "mat4x2.hpp"
+#include "mat4x3.hpp"
+#include "mat4x4.hpp"
 
 #include "geometric.hpp"
 #include "trigonometric.hpp"
+#include "gtc/matrix_determinant.hpp"
+#include "gtc/matrix_inverse.hpp"
 #include "gtc/operator.hpp"
 #include "gtx/io.hpp"
 #include "gtx/string_cast.hpp"

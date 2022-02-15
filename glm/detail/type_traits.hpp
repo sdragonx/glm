@@ -13,7 +13,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 
 template<typename T>

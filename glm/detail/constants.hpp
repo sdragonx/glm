@@ -11,7 +11,9 @@
 
 #include "setup.hpp"
 
-namespace glm{
+
+
+namespace glm {
 
 //
 // class constants

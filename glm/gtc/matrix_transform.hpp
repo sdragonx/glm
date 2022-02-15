@@ -9,8 +9,7 @@
 #ifndef GLM_MATRIX_TRANSFORM_HPP_20211113214455
 #define GLM_MATRIX_TRANSFORM_HPP_20211113214455
 
-#include "../vec.hpp"
-#include "../mat.hpp"
+#include "../matrix.hpp"
 #include "../detail/type_traits.hpp"
 #include "../trigonometric.hpp"
 
@@ -172,7 +171,7 @@ public:
 template<typename genType>
 GLM_API genType identity()
 {
-    return type_traits<genType, typename genType::value_type>::identity();
+    return type_traits<genType>::identity();
 }
 
 //

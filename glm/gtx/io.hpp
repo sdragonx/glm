@@ -10,52 +10,60 @@
 #define GLM_IO_HPP_20211115201242
 
 #include <iostream>
-
-#include "../vec.hpp"
-#include "../mat.hpp"
+#include "../matrix.hpp"
 
 
 
 namespace glm{
 
 template<size_t N, typename T>
-std::ostream& operator <<(std::ostream& os, const vec<N, T>& m)
+std::ostream& operator<<(std::ostream& out, const vec<N, T>& m)
 {
-    os << "{ ";
+    out << "[ ";
     for(size_t i=0; i < N; ++i){
-        os << std::fixed;
-        os.width(6);
-        os.precision(3);
-        os << m[i];
+        out << std::fixed;
+        out.width(6);
+        out.precision(3);
+        out << m[i];
         if(i != N - 1){
-            os << ", ";
+            out << ", ";
         }
     }
-    os << " }";
+    out << " ]";
 
-    return os;
+    return out;
 }
 
 template<typename T>
-std::ostream& operator<<(std::ostream& os, const mat<4, 4, T>& m)
+std::ostream& operator<<(std::ostream& out, const mat<4, 4, T>& m)
 {
-    os << "{" << std::endl;
+    out << std::endl;
     for(size_t x = 0; x < m.COLS; ++x){
-        //os << "\t";
+        if(x == 0)
+            out << "[[";
+        else
+            out << " [";
         for(size_t y = 0; y < m.ROWS; ++y){
-            os << std::fixed;
-            os.width(8);
-            os.precision(3);
-            os << m[y][x];
-            if(y * m.COLS + x < m.length() - 1){
-                os << ", ";
+            out << std::fixed;
+            out.width(8);
+            out.precision(3);
+            out << m[y][x];
+
+            if(y != m.ROWS - 1) {
+                out << ",";
+            }
+            else {
+                if(x != m.COLS - 1) {
+                    out << ']' << std::endl;
+                }
+                else {
+                    out << "]]" << std::endl;
+                }
             }
         }
-        os << std::endl;
     }
-    os << "}";
 
-    return os;
+    return out;
 }
 
 }// end namespace glm

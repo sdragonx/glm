@@ -9,13 +9,13 @@
 #ifndef GLM_LOGICAL_HPP_20211119132746
 #define GLM_LOGICAL_HPP_20211119132746
 
-#include "../vec.hpp"
-#include "functions.hpp"
 #include "functional.hpp"
+#include "functions.hpp"
+#include "type_traits.hpp"
 
 
 
-namespace glm{
+namespace glm {
 
 //
 // Logical operation

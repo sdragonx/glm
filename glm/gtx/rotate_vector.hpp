@@ -9,7 +9,7 @@
 #ifndef GLM_ROTATE_VECTOR_HPP_20211115232106
 #define GLM_ROTATE_VECTOR_HPP_20211115232106
 
-#include "../vec.hpp"
+#include "../vector.hpp"
 
 
 
@@ -37,7 +37,7 @@ vec<2, T> rotate( const vec<2, T>& v, T angle )
 template<typename T>
 vec<3, T> rotate( const vec<3, T>& v, T angle, const vec<3, T>& axis )
 {
-    return rotate(angle, axis) * vec<4, T>(v, constant<T>::one);
+    return rotate(angle, axis) * vec<4, T>(v, constants<T>::one);
 }
 
 template<typename T>

@@ -12,7 +12,8 @@
 #include "detail/functions.hpp"
 #include "detail/functional.hpp"
 #include "trigonometric.hpp"
-#include "vec.hpp"
+
+
 
 namespace glm{
 

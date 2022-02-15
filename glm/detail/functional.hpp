@@ -9,11 +9,11 @@
 #ifndef GLM_FUNCTIONAL_HPP_20211116111721
 #define GLM_FUNCTIONAL_HPP_20211116111721
 
-#include "../vec.hpp"
+#include "../vector.hpp"
 
 
 
-namespace glm{
+namespace glm {
 
 
 

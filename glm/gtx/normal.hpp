@@ -9,7 +9,7 @@
 #ifndef GLM_NORMAL_HPP_20211231171936
 #define GLM_NORMAL_HPP_20211231171936
 
-#include "../vec.hpp"
+#include "../vector.hpp"
 
 namespace glm{
 

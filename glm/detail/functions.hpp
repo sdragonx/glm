@@ -28,7 +28,19 @@ matrixCompMult
 
 
 
-namespace glm{
+namespace glm {
+	
+template<typename T>
+GLM_API T min(const T& x, const T& y)
+{
+    return x < y ? x : y;
+}
+
+template<typename T>
+GLM_API T max(const T& x, const T& y)
+{
+    return x < y ? y : x;
+}
 
 template<typename T>
 GLM_API T abs(const T& value)
@@ -57,13 +69,13 @@ GLM_API T exp(const T& value)
 template<typename T>
 GLM_API T exp2(const T& value)
 {
-    static_cast<T>(std::exp2(static_cast<double>(value)));
+    return static_cast<T>(std::exp2(static_cast<double>(value)));
 }
 
 template<typename T>
 GLM_API T floor(const T& value)
 {
-    static_cast<T>(std::floor(static_cast<double>(value)));
+    return static_cast<T>(std::floor(static_cast<double>(value)));
 }
 
 // 取小数部分
@@ -74,21 +86,9 @@ GLM_API T fract(const T& value)
 }
 
 template<typename T>
-GLM_API T max(const T& x, const T& y)
-{
-    return x < y ? y : x;
-}
-
-template<typename T>
 GLM_API T mid(const T& x, const T& y)
 {
     return mix(x, y, constants<T>::half);
-}
-
-template<typename T>
-GLM_API T min(const T& x, const T& y)
-{
-    return x < y ? x : y;
 }
 
 template<typename T, typename A>
@@ -117,9 +117,9 @@ GLM_API T pow(const T& x, const T& y)
 }
 
 template<typename T>
-GLM_API int round(const T& value)
+GLM_API T round(const T& value)
 {
-    static_cast<T>(std::round(static_cast<double>(value)));
+    return value + (value < T(0) ? T(-0.5) : (0.5));
 }
 
 template<typename T>
@@ -223,7 +223,7 @@ GLM_API vec<N, T> pow(const vec<N, T>& x, const vec<N, T>& y)
 }
 
 template<size_t N, typename T>
-GLM_API int round(const vec<N, T>& v)
+GLM_API vec<N, T> round(const vec<N, T>& v)
 {
     return compute<T, N, T>(round<T>, v);
 }

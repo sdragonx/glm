@@ -73,7 +73,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 typedef size_t length_t;
 

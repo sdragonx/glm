@@ -25,3 +25,13 @@ glm.hpp 里面使用了 using namespace cgl 来暴露 glm 的命名空间。<br>
 
 ### 2022-2-15
 完善所有基础矩阵类型。(mat2xN ~ mat4xN)
+
+### 2022-2-25
++vector
+-vector
+quat<T>
+fixed traits<float>::equal
+isinf()
+isnan()
+step
+smoothstep()

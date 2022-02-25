@@ -88,11 +88,12 @@ public:
         T w = right - left;
         T h = top - bottom;
         T d = zFar - zNear;
+
         return mat<4, 4, T>(
-            (two * zNear) / w,   zero,                 zero,                      zero,
-            zero,                (two * zNear) / h,    zero,                      zero,
-            (right + left) / w, -(zFar + zNear) / d,   (top + bottom) / h,       -one,
-            zero,                zero,                -(two * zFar * zNear) / d,  zero);
+            (two * zNear) / w,  zero,                zero,                      zero,
+            zero,               (two * zNear) / h,   zero,                      zero,
+            (right + left) / w, (top + bottom) / h, -(zFar + zNear) / d,       -one,
+            zero,               zero,               -(two * zFar * zNear) / d,  zero);
     }
 
     static GLM_API mat<4, 4, T> perspective(T fovY, T aspect, T zNear, T zFar)

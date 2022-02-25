@@ -3,11 +3,11 @@
 
  mat4x3.hpp
 
- 2022-02-15 15:29:35
+ 2022-02-19 02:01:58
 
 */
-#ifndef GLM_MAT4X3_HPP20220215152935
-#define GLM_MAT4X3_HPP20220215152935
+#ifndef GLM_MAT4X3_HPP20220219020158
+#define GLM_MAT4X3_HPP20220219020158
 
 #include "matrix.hpp"
 
@@ -186,6 +186,9 @@ public:
     {
         return m[i];
     }
+
+    this_type& operator*=(const this_type& other);
+
 };
 
 //
@@ -362,6 +365,14 @@ GLM_API mat<4, 3, T> operator*(const mat<4, 3, T>& m1, const mat<4, 4, T>& m2)
     return mat4x3_mul(m1, m2);
 }
 
+// mat4x3 *= mat4x3
+template<typename T>
+GLM_API mat<4, 3, T>& mat<4, 3, T>::operator*=(const mat<4, 3, T>& other)
+{
+    *this = mat4x3_mul(*this, other);
+    return *this;
+}
+
 // vec3 = vec3 x mat4x3
 template<typename T>
 GLM_API vec<3, T> operator*(const vec<3, T>& v, const mat<4, 3, T>& m)
@@ -378,4 +389,4 @@ GLM_API vec<4, T> operator*(const mat<4, 3, T>& v, const vec<4, T>& m)
 
 }// end namespace glm
 
-#endif// GLM_MAT4X3_HPP20220215152935
+#endif// GLM_MAT4X3_HPP20220219020158

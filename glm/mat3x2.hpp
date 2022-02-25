@@ -3,11 +3,11 @@
 
  mat3x2.hpp
 
- 2022-02-15 15:29:35
+ 2022-02-19 02:01:58
 
 */
-#ifndef GLM_MAT3X2_HPP20220215152935
-#define GLM_MAT3X2_HPP20220215152935
+#ifndef GLM_MAT3X2_HPP20220219020158
+#define GLM_MAT3X2_HPP20220219020158
 
 #include "matrix.hpp"
 
@@ -165,6 +165,9 @@ public:
     {
         return m[i];
     }
+
+    this_type& operator*=(const this_type& other);
+
 };
 
 //
@@ -329,6 +332,14 @@ GLM_API mat<4, 2, T> operator*(const mat<3, 2, T>& m1, const mat<4, 3, T>& m2)
     return mat3x2_mul(m1, m2);
 }
 
+// mat3x2 *= mat3x2
+template<typename T>
+GLM_API mat<3, 2, T>& mat<3, 2, T>::operator*=(const mat<3, 2, T>& other)
+{
+    *this = mat3x2_mul(*this, other);
+    return *this;
+}
+
 // vec2 = vec2 x mat3x2
 template<typename T>
 GLM_API vec<2, T> operator*(const vec<2, T>& v, const mat<3, 2, T>& m)
@@ -345,4 +356,4 @@ GLM_API vec<3, T> operator*(const mat<3, 2, T>& v, const vec<3, T>& m)
 
 }// end namespace glm
 
-#endif// GLM_MAT3X2_HPP20220215152935
+#endif// GLM_MAT3X2_HPP20220219020158

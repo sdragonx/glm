@@ -91,29 +91,29 @@ public:
     };
 
 public:
-    vec<4, T>() : x(), y(), z(), w() { /*void*/ }
+    vec() : x(), y(), z(), w() { /*void*/ }
 
-    vec<4, T>(const_reference scalar) : x(scalar), y(scalar), z(scalar), w(scalar) { /*void*/ }
-    vec<4, T>(const_reference vx, const_reference vy, const_reference vz, const_reference vw) :
+    vec(const_reference scalar) : x(scalar), y(scalar), z(scalar), w(scalar) { /*void*/ }
+    vec(const_reference vx, const_reference vy, const_reference vz, const_reference vw) :
         x(vx), y(vy), z(vz), w(vw) { /*void*/ }
 
-    vec<4, T>(const this_type& v) :
+    vec(const this_type& v) :
         x(v.x), y(v.y), z(v.z), w(v.w) { /*void*/ }
 
     template<typename X>
-    vec<4, T>(const vec<2, X>& v, const_reference vz = value_type(), const_reference vw = value_type()) :
+    vec(const vec<2, X>& v, const_reference vz = value_type(), const_reference vw = value_type()) :
         x(v.x), y(v.y), z(vz), w(vw) { /*void*/ }
 
     template<typename X>
-    vec<4, T>(const vec<2, X>& v1, const vec<2, X>& v2) :
+    vec(const vec<2, X>& v1, const vec<2, X>& v2) :
         x(v1.x), y(v1.y), z(v2.x), w(v2.y) { /*void*/ }
 
     template<typename X>
-    vec<4, T>(const vec<3, X>& v, const_reference vw = value_type()) :
+    vec(const vec<3, X>& v, const_reference vw = value_type()) :
         x(v.x), y(v.y), z(v.z), w(vw) { /*void*/ }
 
     template<typename X>
-    vec<4, T>(const vec<4, X>& v) :
+    vec(const vec<4, X>& v) :
         x(v.x), y(v.y), z(v.z), w(v.w) { /*void*/ }
 
     length_t length()const { return ELEMENTS; }
@@ -129,10 +129,8 @@ public:
     GLM_VEC4_OPERATION(*);
     GLM_VEC4_OPERATION(/);
 
-    this_type operator-()const
-    {
-        return this_type(-x, -y, -z, -w);
-    }
+    this_type operator+()const { return *this; }
+    this_type operator-()const { return this_type(-x, -y, -z, -w); }
 };
 
 GLM_VEC4_OPERATOR_COMMON(+);

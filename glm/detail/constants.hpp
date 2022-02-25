@@ -9,7 +9,7 @@
 #ifndef GLM_CONSTANTS_HPP_20211113221026
 #define GLM_CONSTANTS_HPP_20211113221026
 
-#include "setup.hpp"
+#include "float.hpp"
 
 
 
@@ -109,6 +109,11 @@ inline T epsilon()
     return constants<T>::epsilon;
 }
 
+template<typename T>
+inline T cos_one_over_two()
+{
+    return T(0.877582561890372716130286068203503191);
+}
 
 }// end namespace glm
 

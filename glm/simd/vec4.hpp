@@ -10,7 +10,7 @@
 #define GLM_SIMD_VEC4_HPP_20211118182640
 
 #include "simd.hpp"
-#include "../vec.hpp"
+#include "../vector.hpp"
 
 
 

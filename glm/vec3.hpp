@@ -89,21 +89,21 @@ public:
     };
 
 public:
-    vec<3, T>() : x(), y(), z() { /*void*/ }
-    vec<3, T>(const_reference scalar) : x(scalar), y(scalar), z(scalar) { /*void*/ }
-    vec<3, T>(const_reference vx, const_reference vy, const_reference vz) :
+    vec() : x(), y(), z() { /*void*/ }
+    vec(const_reference scalar) : x(scalar), y(scalar), z(scalar) { /*void*/ }
+    vec(const_reference vx, const_reference vy, const_reference vz) :
         x(vx), y(vy), z(vz) { /*void*/ }
 
     template<typename X>
-    vec<3, T>(const vec<2, X>& v, const_reference vz = value_type()) :
+    vec(const vec<2, X>& v, const_reference vz = value_type()) :
         x(v.x), y(v.y), z(vz) { /*void*/ }
 
     template<typename X>
-    vec<3, T>(const vec<3, X>& v) :
+    vec(const vec<3, X>& v) :
         x(v.x), y(v.y), z(v.z) { /*void*/ }
 
     template<typename X>
-    vec<3, T>(const vec<4, X>& v) :
+    vec(const vec<4, X>& v) :
         x(v.x), y(v.y), z(v.z) { /*void*/ }
 
     length_t length()const { return ELEMENTS; }
@@ -120,10 +120,8 @@ public:
     GLM_VEC3_OPERATION(*);
     GLM_VEC3_OPERATION(/);
 
-    this_type operator-()const
-    {
-        return this_type(-x, -y, -z);
-    }
+    this_type operator+()const { return *this; }
+    this_type operator-()const { return this_type(-x, -y, -z); }
 };
 
 GLM_VEC3_OPERATOR_COMMON(+);

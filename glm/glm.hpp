@@ -15,10 +15,12 @@
 #include "detail/logical.hpp"
 #include "detail/type_traits.hpp"
 
+#include "vector.hpp"
 #include "vec2.hpp"
 #include "vec3.hpp"
 #include "vec4.hpp"
 
+#include "matrix.hpp"
 #include "mat2x2.hpp"
 #include "mat2x3.hpp"
 #include "mat2x4.hpp"
@@ -31,9 +33,11 @@
 
 #include "geometric.hpp"
 #include "trigonometric.hpp"
+#include "gtc/vector_functions.hpp"
+#include "gtc/vector_logical.hpp"
 #include "gtc/matrix_determinant.hpp"
+#include "gtc/matrix_functions.hpp"
 #include "gtc/matrix_inverse.hpp"
-#include "gtc/operator.hpp"
 #include "gtx/io.hpp"
 #include "gtx/string_cast.hpp"
 

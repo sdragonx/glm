@@ -27,7 +27,13 @@ public:
         return T();
     }
 
-    static bool is_zero(const T& value)
+    // to boolean
+    static bool judge(const T& value)
+    {
+        return value != T(0);
+    }
+
+    static bool isZero(const T& value)
     {
         return value == T(0);
     }
@@ -68,24 +74,64 @@ public:
     }
 };
 
-// bool is_zero ( real type )
+// bool isZero ( real type )
 
 template<>
-GLM_API bool type_traits<float>::is_zero(const float& value)
+GLM_API bool type_traits<float>::isZero(const float& value)
 {
     return value < zero ? -value < epsilon : value < epsilon;
 }
 
 template<>
-GLM_API bool type_traits<double>::is_zero(const double& value)
+GLM_API bool type_traits<double>::isZero(const double& value)
 {
     return value < zero ? -value < epsilon : value < epsilon;
 }
 
 template<>
-GLM_API bool type_traits<long double>::is_zero(const long double& value)
+GLM_API bool type_traits<long double>::isZero(const long double& value)
 {
     return value < zero ? -value < epsilon : value < epsilon;
+}
+
+// bool judge( real type )
+
+template<>
+GLM_API bool type_traits<float>::judge(const float& value)
+{
+    return !isZero(value);
+}
+
+template<>
+GLM_API bool type_traits<double>::judge(const double& value)
+{
+    return !isZero(value);
+}
+
+template<>
+GLM_API bool type_traits<long double>::judge(const long double& value)
+{
+    return !isZero(value);
+}
+
+// bool not( real type )
+
+template<>
+GLM_API bool type_traits<float>::Not(const float& value)
+{
+    return isZero(value);
+}
+
+template<>
+GLM_API bool type_traits<double>::Not(const double& value)
+{
+    return isZero(value);
+}
+
+template<>
+GLM_API bool type_traits<long double>::Not(const long double& value)
+{
+    return isZero(value);
 }
 
 // bool equal ( real type )
@@ -93,37 +139,19 @@ GLM_API bool type_traits<long double>::is_zero(const long double& value)
 template<>
 GLM_API bool type_traits<float>::equal(const float& x, const float& y)
 {
-    return !is_zero(x - y);
+    return isZero(x - y);
 }
 
 template<>
 GLM_API bool type_traits<double>::equal(const double& x, const double& y)
 {
-    return !is_zero(x - y);
+    return isZero(x - y);
 }
 
 template<>
 GLM_API bool type_traits<long double>::equal(const long double& x, const long double& y)
 {
-    return !is_zero(x - y);
-}
-
-template<>
-GLM_API bool type_traits<float>::Not(const float& value)
-{
-    return is_zero(value);
-}
-
-template<>
-GLM_API bool type_traits<double>::Not(const double& value)
-{
-    return is_zero(value);
-}
-
-template<>
-GLM_API bool type_traits<long double>::Not(const long double& value)
-{
-    return is_zero(value);
+    return isZero(x - y);
 }
 
 //

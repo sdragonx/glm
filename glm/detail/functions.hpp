@@ -5,18 +5,14 @@
 
  2021-11-16 11:45:17
 
-isinf
-isnan
-step
-smoothstep
-roundEven
-matrixCompMult
+ roundEven
+ matrixCompMult
 
 */
 #ifndef GLM_FUNCTIONS_HPP_20211116114517
 #define GLM_FUNCTIONS_HPP_20211116114517
 
-#include "functional.hpp"
+#include "constants.hpp"
 
 #ifdef min
     #undef min
@@ -86,15 +82,21 @@ GLM_API T fract(const T& value)
 }
 
 template<typename T>
-GLM_API T mid(const T& x, const T& y)
+GLM_API T mix(const T& x, const T& y, const T& a)
 {
-    return mix(x, y, constants<T>::half);
+    return x + (y - x) * a;
 }
 
 template<typename T, typename A>
-GLM_API T mix(const T& x, const T& y, A a)
+GLM_API T mix(const T& x, const T& y, const A& a)
 {
-    return x + (y - x) * a;
+    return x + (y - x) * static_cast<T>(a);
+}
+
+template<typename T>
+GLM_API T mid(const T& x, const T& y)
+{
+    return mix(x, y, constants<T>::half);
 }
 
 // x - y * floor(x / y)
@@ -134,110 +136,17 @@ GLM_API T sqrt(const T& value)
     return static_cast<T>(std::sqrt(static_cast<double>(value)));
 }
 
-//
-// vec<N, T>
-//
-
-template<size_t N, typename T>
-GLM_API vec<N, T> abs(const vec<N, T>& v)
+template<typename T>
+GLM_API T step(const T& edge, const T& x)
 {
-    return compute<T, N, T>(abs<T>, v);
+    return mix(static_cast<T>(1), static_cast<T>(0), x < edge);
 }
 
-template<size_t N, typename T>
-GLM_API vec<N, T> ceil(const vec<N, T>& v)
+template<typename T>
+GLM_API T smoothstep(const T& edge0, const T& edge1, const T& x)
 {
-    return static_cast<T>(ceil<T>, v);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> clamp(const vec<N, T>& v, T minVal, T maxVal)
-{
-    return compute<T, N, T>(clamp<T, T>, v, minVal, maxVal);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> exp(const vec<N, T>& v)
-{
-    return compute<T, N, T>(exp<T>, v);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> exp2(const vec<N, T>& v)
-{
-    return compute<T, N, T>(exp2<T>, v);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> floor(const vec<N, T>& v)
-{
-    return compute<T, N, T>(floor<T>, v);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> fract(const vec<N, T>& v)
-{
-    return compute<T, N, T>(fract<T>, v);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> max(const vec<N, T>& x, const vec<N, T>& y)
-{
-    return compute<T, N, T>(max<T>, x, y);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> mid(const vec<N, T>& x, const vec<N, T>& y)
-{
-    return compute<T, N, T>(mid<T>, x, y);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> min(const vec<N, T>& x, const vec<N, T>& y)
-{
-    return compute<T, N, T>(min<T>, x, y);
-}
-
-template<size_t N, typename T, typename A>
-GLM_API vec<N, T> mix(const vec<N, T>& x, const vec<N, T>& y, A a)
-{
-    return compute<T, N, T>(mix<T, A>, x, y, a);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> mod(const vec<N, T>& x, const vec<N, T>& y)
-{
-    return compute<T, N, T>(mod<T>, x, y);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> modf(const vec<N, T>& x, const vec<N, T>& y)
-{
-    return compute<T, N, T>(modf<T>, x, y);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> pow(const vec<N, T>& x, const vec<N, T>& y)
-{
-    return compute<T, N, T>(pow<T>, x, y);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> round(const vec<N, T>& v)
-{
-    return compute<T, N, T>(round<T>, v);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> sign(const vec<N, T>& v)
-{
-    return compute<T, N, T>(sign<T>, v);
-}
-
-template<size_t N, typename T>
-GLM_API vec<N, T> sqrt(const vec<N, T>& v)
-{
-    return compute<T, N, T>(sqrt<T>, v);
+    T const tmp(clamp((x - edge0) / (edge1 - edge0), T(0), T(1)));
+    return tmp * tmp * (T(3) - T(2) * tmp);
 }
 
 }// end namespace glm

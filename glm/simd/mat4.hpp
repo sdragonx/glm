@@ -142,6 +142,21 @@ GLM_INS_API void mat4_transform(const float* m, const float* v, float* dest)
 }
 
 #endif// GLM_HAVE_INSTRUCTIONS
+
+GLM_API mat<4, 4, float> mat4_mul(const mat<4, 4, float>& m1, const mat<4, 4, float>& m2)
+{
+    mat<4, 4, float> product;
+    mat4_mul(m1.data(), m2.data(), product.data());
+    return product;
+}
+
+GLM_API vec<4, float> transform(const mat<4, 4, float>& m, const vec<4, float>& v)
+{
+    vec<4, float> product;
+    mat4_transform(m.data(), v.data(), product.data());
+    return product;
+}
+
 #endif// GLM_ENABLE_INSTRUCTIONS
 
 }// end namespace glm

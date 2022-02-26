@@ -11,7 +11,7 @@
 
 #include "../matrix.hpp"
 #include "../detail/type_traits.hpp"
-#include "../trigonometric.hpp"
+#include "../detail/trigonometric.hpp"
 
 
 

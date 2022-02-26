@@ -40,6 +40,7 @@
 #include "gtc/matrix_inverse.hpp"
 #include "gtx/io.hpp"
 #include "gtx/string_cast.hpp"
+#include "simd/mat4.hpp"
 
 
 

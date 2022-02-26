@@ -3,97 +3,76 @@
 
  trigonometric.hpp
 
- 2021-11-13 23:08:05
+ 2022-02-26 04:23:07
 
 */
-#ifndef GLM_TRIGONOMETRIC_HPP_20211113230805
-#define GLM_TRIGONOMETRIC_HPP_20211113230805
+#ifndef GLM_VECTOR_TRIGONOMETRIC_HPP_20220226042307
+#define GLM_VECTOR_TRIGONOMETRIC_HPP_20220226042307
 
-#include <cmath>
-#include "detail/constants.hpp"
 #include "detail/functional.hpp"
+#include "detail/trigonometric.hpp"
 
 
 
 namespace glm{
 
-//
-// common
-//
-
-template<typename T>
-GLM_API T radians(T value)
+template<size_t N, typename T>
+GLM_API vec<N, T> radians(const vec<N, T>& v)
 {
-    return value * constants<T>::radians;
+    return compute<T, N, T>::invoke(radians<T>, v);
 }
 
-template<typename T>
-GLM_API T degrees(T value)
+template<size_t N, typename T>
+GLM_API vec<N, T> degrees(const vec<N, T>& v)
 {
-    return value * constants<T>::inv_radians;
+    return compute<T, N, T>::invoke(degrees<T>, v);
 }
-
-template<typename T>
-GLM_API T sin(const T& value)
-{
-    return static_cast<T>(std::sin(static_cast<double>(value)));
-}
-
-template<typename T>
-GLM_API T cos(const T& value)
-{
-    return static_cast<T>(std::cos(static_cast<double>(value)));
-}
-
-template<typename T>
-GLM_API T tan(const T& value)
-{
-    return static_cast<T>(std::tan(static_cast<double>(value)));
-}
-
-// [-PI/2, PI/2]
-template<typename T>
-GLM_API T asin(const T& value)
-{
-    return static_cast<T>(std::asin(static_cast<double>(value)));
-}
-
-// [0, PI]
-template<typename T>
-GLM_API T acos(const T& value)
-{
-    return static_cast<T>(std::acos(static_cast<double>(value)));
-}
-
-// [-PI, PI]
-template<typename T>
-GLM_API T atan(const T& value)
-{
-    return static_cast<T>(std::atan(static_cast<double>(value)));
-}
-
-template<typename T>
-GLM_API T atan(const T& x, const T& y)
-{
-    return static_cast<T>(std::atan2(static_cast<double>(x), static_cast<double>(y)));
-}
-
-//
-// vec<N, T>
-//
 
 template<size_t N, typename T>
 GLM_API vec<N, T> sin(const vec<N, T>& v)
 {
-    return compute<T, N, T>(sin<T>, v);
+    return compute<T, N, T>::invoke(sin<T>, v);
 }
 
 template<size_t N, typename T>
 GLM_API vec<N, T> cos(const vec<N, T>& v)
 {
-    return compute<T, N, T>(cos<T>, v);
+    return compute<T, N, T>::invoke(cos<T>, v);
+}
+
+template<size_t N, typename T>
+GLM_API vec<N, T> tan(const vec<N, T>& v)
+{
+    return compute<T, N, T>::invoke(tan<T>, v);
+}
+
+// [-PI/2, PI/2]
+template<size_t N, typename T>
+GLM_API vec<N, T> asin(const vec<N, T>& v)
+{
+    return compute<T, N, T>::asin(radians<T>, v);
+}
+
+// [0, PI]
+template<size_t N, typename T>
+GLM_API vec<N, T> acos(const vec<N, T>& v)
+{
+    return compute<T, N, T>::invoke(acos<T>, v);
+}
+
+// [-PI, PI]
+template<size_t N, typename T>
+GLM_API vec<N, T> atan(const vec<N, T>& v)
+{
+    return compute<T, N, T>::invoke(atan<T>, v);
+}
+
+template<size_t N, typename T>
+GLM_API vec<N, T> atan(const vec<N, T>& x, const vec<N, T>& y)
+{
+    return compute<T, N, T>::invoke(atan<T>, x, y);
 }
 
 }// end namespace glm
 
-#endif// GLM_TRIGONOMETRIC_HPP_20211113230805
+#endif// GLM_VECTOR_TRIGONOMETRIC_HPP_20220226042307

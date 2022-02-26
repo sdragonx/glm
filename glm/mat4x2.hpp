@@ -3,11 +3,11 @@
 
  mat4x2.hpp
 
- 2022-02-19 02:01:58
+ 2022-02-26 09:06:55
 
 */
-#ifndef GLM_MAT4X2_HPP20220219020158
-#define GLM_MAT4X2_HPP20220219020158
+#ifndef GLM_MAT4X2_HPP20220226090655
+#define GLM_MAT4X2_HPP20220226090655
 
 #include "matrix.hpp"
 
@@ -370,11 +370,11 @@ GLM_API vec<2, T> operator*(const vec<2, T>& v, const mat<4, 2, T>& m)
 
 // vec4 = mat4x2 x vec4
 template<typename T>
-GLM_API vec<4, T> operator*(const mat<4, 2, T>& v, const vec<4, T>& m)
+GLM_API vec<4, T> operator*(const mat<4, 2, T>& m, const vec<4, T>& v)
 {
     return transform(m, v);
 }
 
 }// end namespace glm
 
-#endif// GLM_MAT4X2_HPP20220219020158
+#endif// GLM_MAT4X2_HPP20220226090655

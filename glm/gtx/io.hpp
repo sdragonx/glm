@@ -34,8 +34,8 @@ std::ostream& operator<<(std::ostream& out, const vec<N, T>& m)
     return out;
 }
 
-template<typename T>
-std::ostream& operator<<(std::ostream& out, const mat<4, 4, T>& m)
+template<size_t CX, size_t CY, typename T>
+std::ostream& operator<<(std::ostream& out, const mat<CX, CY, T>& m)
 {
     out << std::endl;
     for(size_t x = 0; x < m.COLS; ++x){

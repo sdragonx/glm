@@ -3,11 +3,11 @@
 
  mat4x2.hpp
 
- 2022-02-26 09:06:55
+ 2022-05-20 18:08:09
 
 */
-#ifndef GLM_MAT4X2_HPP20220226090655
-#define GLM_MAT4X2_HPP20220226090655
+#ifndef GLM_MAT4X2_HPP20220520180809
+#define GLM_MAT4X2_HPP20220520180809
 
 #include "matrix.hpp"
 
@@ -28,15 +28,16 @@ public:
     typedef mat<4, 2, T> this_type;
     typedef vec<2, T> col_type;
     typedef vec<4, T> row_type;
+    typedef mat<2, 4, T> transpose_type;
 
     enum {
-        ROWS = 4, 
         COLS = 2, 
+        ROWS = 4, 
         ELEMENTS = 8, 
     };
 
 public:
-    col_type m[COLS];
+    col_type m[ROWS];
 
 public:
     mat()
@@ -246,15 +247,13 @@ template<typename T>
 GLM_API mat<2, 4, T> transpose(const mat<4, 2, T>& m)
 {
      return mat2x4(
-        m[0][0], m[1][0],
-        m[0][1], m[1][1],
-        m[0][2], m[1][2],
-        m[0][3], m[1][3]);
+        m[0][0], m[1][0], m[2][0], m[3][0],
+        m[0][1], m[1][1], m[2][1], m[3][1]);
 }
 
-// vec2 = transform( in vec2, in mat4x2 )
+// vec4 = transform( in vec2, in mat4x2 )
 template<typename T>
-GLM_API vec<2, T> transform(const vec<2, T>& v, const mat<4, 2, T>& m)
+GLM_API vec<4, T> transform(const vec<2, T>& v, const mat<4, 2, T>& m)
 {
     return vec<4, T>(
         v[0] * m[0][0] + v[1] * m[0][1],
@@ -263,11 +262,11 @@ GLM_API vec<2, T> transform(const vec<2, T>& v, const mat<4, 2, T>& m)
         v[0] * m[3][0] + v[1] * m[3][1]);
 }
 
-// vec4 = transform ( in mat4x2, in vec4 )
+// vec2 = transform ( in mat4x2, in vec4 )
 template<typename T>
-GLM_API vec<4, T> transform(const mat<4, 2, T>& m, const vec<4, T>& v)
+GLM_API vec<2, T> transform(const mat<4, 2, T>& m, const vec<4, T>& v)
 {
-    return vec<4, T>(
+    return vec<2, T>(
         m[0][0] * v[0] + m[1][0] * v[1] + m[2][0] * v[2] + m[3][0] * v[3],
         m[0][1] * v[0] + m[1][1] * v[1] + m[2][1] * v[2] + m[3][1] * v[3]);
 }
@@ -361,20 +360,20 @@ GLM_API mat<4, 2, T>& mat<4, 2, T>::operator*=(const mat<4, 2, T>& other)
     return *this;
 }
 
-// vec2 = vec2 x mat4x2
+// vec4 = vec2 x mat4x2
 template<typename T>
-GLM_API vec<2, T> operator*(const vec<2, T>& v, const mat<4, 2, T>& m)
+GLM_API vec<4, T> operator*(const vec<2, T>& v, const mat<4, 2, T>& m)
 {
     return transform(v, m);
 }
 
-// vec4 = mat4x2 x vec4
+// vec2 = mat4x2 x vec4
 template<typename T>
-GLM_API vec<4, T> operator*(const mat<4, 2, T>& m, const vec<4, T>& v)
+GLM_API vec<2, T> operator*(const mat<4, 2, T>& m, const vec<4, T>& v)
 {
     return transform(m, v);
 }
 
 }// end namespace glm
 
-#endif// GLM_MAT4X2_HPP20220226090655
+#endif// GLM_MAT4X2_HPP20220520180809

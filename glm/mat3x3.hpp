@@ -3,11 +3,11 @@
 
  mat3x3.hpp
 
- 2022-02-26 09:06:55
+ 2022-05-20 18:08:09
 
 */
-#ifndef GLM_MAT3X3_HPP20220226090655
-#define GLM_MAT3X3_HPP20220226090655
+#ifndef GLM_MAT3X3_HPP20220520180809
+#define GLM_MAT3X3_HPP20220520180809
 
 #include "matrix.hpp"
 
@@ -28,15 +28,16 @@ public:
     typedef mat<3, 3, T> this_type;
     typedef vec<3, T> col_type;
     typedef vec<3, T> row_type;
+    typedef mat<3, 3, T> transpose_type;
 
     enum {
-        ROWS = 3, 
         COLS = 3, 
+        ROWS = 3, 
         ELEMENTS = 9, 
     };
 
 public:
-    col_type m[COLS];
+    col_type m[ROWS];
 
 public:
     mat()
@@ -370,4 +371,4 @@ GLM_API vec<3, T> operator*(const mat<3, 3, T>& m, const vec<3, T>& v)
 
 }// end namespace glm
 
-#endif// GLM_MAT3X3_HPP20220226090655
+#endif// GLM_MAT3X3_HPP20220520180809

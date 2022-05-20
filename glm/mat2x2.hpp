@@ -3,11 +3,11 @@
 
  mat2x2.hpp
 
- 2022-02-26 09:06:55
+ 2022-05-20 18:08:09
 
 */
-#ifndef GLM_MAT2X2_HPP20220226090655
-#define GLM_MAT2X2_HPP20220226090655
+#ifndef GLM_MAT2X2_HPP20220520180809
+#define GLM_MAT2X2_HPP20220520180809
 
 #include "matrix.hpp"
 
@@ -28,15 +28,16 @@ public:
     typedef mat<2, 2, T> this_type;
     typedef vec<2, T> col_type;
     typedef vec<2, T> row_type;
+    typedef mat<2, 2, T> transpose_type;
 
     enum {
-        ROWS = 2, 
         COLS = 2, 
+        ROWS = 2, 
         ELEMENTS = 4, 
     };
 
 public:
-    col_type m[COLS];
+    col_type m[ROWS];
 
 public:
     mat()
@@ -335,4 +336,4 @@ GLM_API vec<2, T> operator*(const mat<2, 2, T>& m, const vec<2, T>& v)
 
 }// end namespace glm
 
-#endif// GLM_MAT2X2_HPP20220226090655
+#endif// GLM_MAT2X2_HPP20220520180809

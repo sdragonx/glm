@@ -3,11 +3,11 @@
 
  mat4x4.hpp
 
- 2022-02-26 09:06:55
+ 2022-05-20 18:08:09
 
 */
-#ifndef GLM_MAT4X4_HPP20220226090655
-#define GLM_MAT4X4_HPP20220226090655
+#ifndef GLM_MAT4X4_HPP20220520180809
+#define GLM_MAT4X4_HPP20220520180809
 
 #include "matrix.hpp"
 
@@ -28,15 +28,16 @@ public:
     typedef mat<4, 4, T> this_type;
     typedef vec<4, T> col_type;
     typedef vec<4, T> row_type;
+    typedef mat<4, 4, T> transpose_type;
 
     enum {
-        ROWS = 4, 
         COLS = 4, 
+        ROWS = 4, 
         ELEMENTS = 16, 
     };
 
 public:
-    col_type m[COLS];
+    col_type m[ROWS];
 
 public:
     mat()
@@ -401,4 +402,4 @@ GLM_API vec<4, T> operator*(const mat<4, 4, T>& m, const vec<4, T>& v)
 
 }// end namespace glm
 
-#endif// GLM_MAT4X4_HPP20220226090655
+#endif// GLM_MAT4X4_HPP20220520180809

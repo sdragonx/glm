@@ -96,12 +96,25 @@ public:
             zero,               zero,               -(two * zFar * zNear) / d,  zero);
     }
 
+    static GLM_API mat<4, 4, T> frustumZO(value_type left, value_type right, value_type bottom, value_type top, value_type zNear, value_type zFar)
+    {
+        T w = right - left;
+        T h = top - bottom;
+        T d = zFar - zNear;
+
+        return mat<4, 4, T>(
+            (2.0f * zNear) / w,  0.0f,                0.0f,                     0.0f,
+            0.0f,                (2.0f * zNear) / h,  0.0f,                     0.0f,
+            (right + left) / w,  (top + bottom) / h,  zFar / (zNear - zFar),    -1.0f,
+            0.0f,                0.0f,                -(zFar * zNear) / d,      0.0f);
+    }
+
     static GLM_API mat<4, 4, T> perspective(T fovY, T aspect, T zNear, T zFar)
     {
         #if 0
         T h = tan(fovY * half) * zNear;
         T w = h * aspect;
-        return frustum(-w, w, -h, h, zNear, zFar);
+        return frustumZO(-w, w, -h, h, zNear, zFar);
         #else
         const T tanHalfFovy = tan(fovY * half);
         mat<4, 4, T> m(zero);

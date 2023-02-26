@@ -14,7 +14,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 template<typename T>
 vec<4, T> vec4_add(const vec<4, T>& v1, const vec<4, T>& v2)

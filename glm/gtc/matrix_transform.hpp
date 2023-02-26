@@ -15,7 +15,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 //
 // class matrix_transform
@@ -66,7 +66,8 @@ public:
             zero, zero, zero, one);
     }
 
-    // 视口矩阵
+    /* 视口矩阵
+     */
     static GLM_API mat<4, 4, T> viewport(T x, T y, T w, T h)
     {
         // identity();
@@ -139,7 +140,8 @@ public:
             -(right + left) / w, -(top + bottom) / h, -(zFar + zNear) / d, one);
     }
 
-    // glu: gluOrtho2D(left, right, bottom, top, -1.0, 1.0)
+    /* GLU: gluOrtho2D(left, right, bottom, top, -1.0, 1.0)
+     */
     static GLM_API mat<4, 4, T> ortho(T left, T right, T bottom, T top)
     {
         T w = right - left;

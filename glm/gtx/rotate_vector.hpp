@@ -13,7 +13,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 //
 // vec<2, T> rotate( vec<2, T>, angle )

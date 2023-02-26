@@ -16,25 +16,13 @@
 
 
 namespace glm {
-/*
-#define GLM_QUAT_OPERATION(op)\
-    template<typename X>\
-    this_type operator op(const X& scalar)const\
-    {\
-        return this_type(w op scalar, x op scalar, y op scalar, z op scalar);\
-    }\
-    template<typename X>\
-    this_type operator op##=(const X& scalar)const\
-    {\
-        return this_type(w op##= scalar, x op##= scalar, y op##= scalar, z op##= scalar);\
-    }
-*/
 
-// 从两个归一化轴创建四元数
-// u    第一个归一化的轴
-// v    第二个归一化的轴
-// 
-// http://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors
+/* 从两个归一化轴创建四元数
+ * u    第一个归一化的轴
+ * v    第二个归一化的轴
+ * 
+ * http://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors
+ */
 template<typename T>
 GLM_API qua<T>::qua(const vec<3, T>& u, const vec<3, T>& v)
 {
@@ -43,9 +31,10 @@ GLM_API qua<T>::qua(const vec<3, T>& u, const vec<3, T>& v)
     vec<3, T> t;
 
     if (real_part < static_cast<T>(1.e-6f) * norm_u_norm_v) {
-        // If u and v are exactly opposite, rotate 180 degrees
-        // around an arbitrary orthogonal axis. Axis normalisation
-        // can happen later, when we normalise the quaternion.
+        /* If u and v are exactly opposite, rotate 180 degrees
+         * around an arbitrary orthogonal axis. Axis normalisation
+         * can happen later, when we normalise the quaternion.
+         */
         real_part = static_cast<T>(0);
         t = abs(u.x) > abs(u.z) ? vec<3, T>(-u.y, u.x, static_cast<T>(0)) : vec<3, T>(static_cast<T>(0), -u.z, u.y);
     }

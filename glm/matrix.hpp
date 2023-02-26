@@ -13,7 +13,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 //
 // mat<X, Y, T>
@@ -28,7 +28,7 @@ public:
     typedef mat this_type;
     typedef vec<CX, T> row_type;
 
-    enum{
+    enum {
         COLUMNS = CX,
         ROWS = CY,
         ELEMENTS = CX * CY,

@@ -11,7 +11,7 @@
 
 #include "../detail/setup.hpp"
 
-namespace glm{
+namespace glm {
 
 
 

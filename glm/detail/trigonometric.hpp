@@ -13,7 +13,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 template<typename T>
 GLM_API T radians(T value)

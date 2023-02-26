@@ -39,12 +39,13 @@ GLM_API vec<4, bool> notEqual(const qua<T>& x, const qua<T>& y)
     return vec<4, bool>(notEqual(x.x, y.x), notEqual(x.y, y.y), notEqual(x.z, y.z), notEqual(x.w, y.w));
 }
 
-// 两个四元数的球面线性插值。
-// 插值是定向的，旋转是以恒定的速度进行的。
-// 对于短路径球面线性插值，使用slerp函数。
-// x    四元数
-// y    四元数
-// a    插值因子。插值的定义超出了范围[0,1]。
+/* 两个四元数的球面线性插值。
+ * 插值是定向的，旋转是以恒定的速度进行的。
+ * 对于短路径球面线性插值，使用slerp函数。
+ * x    四元数
+ * y    四元数
+ * a    插值因子。插值的定义超出了范围[0,1]。
+ */
 template<typename T>
 GLM_API qua<T> mix(const qua<T>& x, const qua<T>& y, T a)
 {
@@ -66,11 +67,12 @@ GLM_API qua<T> mix(const qua<T>& x, const qua<T>& y, T a)
     }
 }
 
-// 两个四元数的线性插值。
-// 插值是定向的。
-// x    四元数
-// y    四元数
-// a    插值因子。插值定义在[0,1]范围内。
+/* 两个四元数的线性插值。
+ * 插值是定向的。
+ * x    四元数
+ * y    四元数
+ * a    插值因子。插值定义在[0,1]范围内。
+ */
 template<typename T>
 GLM_API qua<T> lerp(const qua<T>& x, const qua<T>& y, T a)
 {
@@ -81,11 +83,12 @@ GLM_API qua<T> lerp(const qua<T>& x, const qua<T>& y, T a)
     return x * (static_cast<T>(1) - a) + (y * a);
 }
 
-// 两个四元数的球面线性插值。
-// 插补始终采用短路径，并且以恒定速度执行旋转。
-// x    四元数
-// y    四元数
-// a    插值因子。插值的定义超出了范围[0,1]。
+/* 两个四元数的球面线性插值。
+ * 插补始终采用短路径，并且以恒定速度执行旋转。
+ * x    四元数
+ * y    四元数
+ * a    插值因子。插值的定义超出了范围[0,1]。
+ */
 template<typename T>
 GLM_API qua<T> slerp(const qua<T>& x, const qua<T>& y, T a)
 {
@@ -116,13 +119,14 @@ GLM_API qua<T> slerp(const qua<T>& x, const qua<T>& y, T a)
     }
 }
 
-// 旋转轴上具有多个旋转的两个四元数的球面线性插值。
-// 当自旋计数为正时，插值总是采用短路径，而当自旋计数为长路径时，插值总是采用长路径
-// 当计数为负时。旋转以恒定速度进行。
-// x    四元数
-// y    四元数
-// a    插值因子。插值的定义超出了范围[0,1]。
-// k    额外旋转计数。如果值为负，则插值将位于“长”路径上。
+/* 旋转轴上具有多个旋转的两个四元数的球面线性插值。
+ * 当自旋计数为正时，插值总是采用短路径，而当自旋计数为长路径时，插值总是采用长路径
+ * 当计数为负时。旋转以恒定速度进行。
+ * x    四元数
+ * y    四元数
+ * a    插值因子。插值的定义超出了范围[0,1]。
+ * k    额外旋转计数。如果值为负，则插值将位于“长”路径上。
+ */
 template<typename T, typename S>
 GLM_API qua<T> slerp(const qua<T>& x, const qua<T>& y, T a, S k)
 {
@@ -154,14 +158,16 @@ GLM_API qua<T> slerp(const qua<T>& x, const qua<T>& y, T a, S k)
     }
 }
 
-// 返回四元数共轭
+/* 返回四元数共轭
+ */
 template<typename T>
 GLM_API qua<T> conjugate(const qua<T>& q)
 {
     return qua<T>(q.w, -q.x, -q.y, -q.z);
 }
 
-// 返回四元数的倒数。
+/* 返回四元数的倒数。
+ */
 template<typename T>
 GLM_API qua<T> inverse(const qua<T>& q)
 {

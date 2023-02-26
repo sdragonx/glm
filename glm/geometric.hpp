@@ -15,7 +15,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 //
 // T dot( in vec<N, T>, in vec<N, T> )
@@ -72,7 +72,6 @@ GLM_API T distance(const vec<N, T>& a, const vec<N, T>& b)
 //
 // vec3 cross( in vec3, in vec3 )
 //
-
 
 /* ²æ³Ë
  *

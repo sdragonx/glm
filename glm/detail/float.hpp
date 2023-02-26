@@ -13,32 +13,89 @@
 
 namespace glm {
 
-#if !defined(FP_INFINITE) && !defined(FP_NAN)
+#if defined(GLM_NATIVE_CPP11_SUPPORT)
 
-template<typename T>
-GLM_API bool isinf(const T& n)
+using std::isfinite;
+using std::isinf;
+using std::isnan;
+using std::isnormal;
+using std::signbit;
+
+#elif defined(_FPCLASS_SNAN) || defined(FP_SNAN)
+
+//
+// fpclass
+//
+
+GLM_API bool isfinite(double n)
 {
-     return _finite(n);
+    return _finite(n);
 }
 
-template<typename T>
-GLM_API bool isnan(const T& n)
+GLM_API bool isinf(double n)
 {
+    return _fpclass(n) & (_FPCLASS_NINF | _FPCLASS_PINF);
+}
+
+GLM_API bool isnan(double n)
+{
+    //return _fpclass(n) & (_FPCLASS_SNAN | _FPCLASS_QNAN);
     return _isnan(n);
 }
 
-#else
+GLM_API bool isnormal(double n)
+{
+    return _fpclass(n) & (_FPCLASS_NN | _FPCLASS_PN);
+}
+
+GLM_API bool signbit(double n)
+{
+    return n < 0.0;
+}
+
+#elif defined(FP_INFINITE)
+
+//
+// __fpclassify()       // msvc
+//
 
 template<typename T>
-GLM_API bool isinf(const T& n)
+bool isfinite(T value)
 {
-    return std::isinf(n);
+    return fpclassify(T) <= 0;
 }
 
 template<typename T>
-GLM_API bool isnan(const T& n)
+bool isinf(T value)
 {
-    return std::isnan(n);
+    return fpclassify(value) == FP_INFINITE;
+}
+
+template<typename T>
+bool isnan(T value)
+{
+    return fpclassify(value) == FP_NAN;
+}
+
+template<typename T>
+bool isnormal(T value)
+{
+    return fpclassify(value) == FP_NORMAL;
+}
+
+bool signbit(float value)
+{
+    return _fdsign(value);
+}
+
+bool signbit(double value)
+{
+    return _dsign(value);
+}
+
+bool signbit(long double value)
+{
+    return _ldsign(value);
 }
 
 #endif

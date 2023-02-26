@@ -44,7 +44,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 typedef vec<1, bool> bvec1;
 typedef vec<2, bool> bvec2;

@@ -13,7 +13,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 template<length_t N, typename T>
 class vec

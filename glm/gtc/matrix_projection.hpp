@@ -13,8 +13,7 @@
 
 
 
-namespace glm{
-
+namespace glm {
 
 //
 // project
@@ -30,13 +29,16 @@ GLM_API vec<4, T> project(
     vec<4, T> product = modelview * v;
     product = projection * product;
 
-    // 透视除法
+    /* 透视除法
+     */
     product /= product.w;
 
-    // 映射到 0 ~ 1
+    /* 映射到 0 ~ 1
+     */
 	product = product * constants<T>::half + constants<T>::half;
 
-    // 转换到屏幕坐标
+    /* 转换到屏幕坐标
+     */
     const T x = static_cast<T>(viewport[0]);
     const T y = static_cast<T>(viewport[1]);
     const T w = static_cast<T>(viewport[2]);

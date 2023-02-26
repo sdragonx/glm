@@ -11,7 +11,7 @@
 
 #include "../vector.hpp"
 
-namespace glm{
+namespace glm {
 
 //
 // bool intersectRayPlane( in rayPos, in rayDir, in planeOrg, in planeNormal, out distance )
@@ -62,10 +62,12 @@ GLM_API bool intersectRayTriangle(
     // p
     vec<3, T> p = cross(rayDir, v31);
 
-    // determinant
+    /* determinant
+     */
     T det = dot(v21, p);
 
-    // keep det > 0, modify dir accordingly
+    /* keep det > 0, modify dir accordingly
+     */
     vec<3, T> dir;
     if (det > 0) {
         dir = rayPos - v1;
@@ -75,12 +77,14 @@ GLM_API bool intersectRayTriangle(
         det = -det;
     }
 
-    //  determinant 接近 0 时，表示射线与平面几乎平行
+    /*  determinant 接近 0 时，表示射线与平面几乎平行
+     */
     if (det < constants<T>::epsilon) {
         return false;
     }
 
-    // 计算 u, 保证 u <= 1
+    /* 计算 u, 保证 u <= 1
+     */
     coord.x = dot(dir, p);
     if (coord.x < T(0) || coord.x > det) {
         return false;
@@ -89,16 +93,19 @@ GLM_API bool intersectRayTriangle(
     // q
     vec<3, T> q = cross(dir, v21);
 
-    // 计算 v, 保证 u + v <= 1
+    /* 计算 v, 保证 u + v <= 1
+     */
     coord.y = dot(rayDir, q);
     if (coord.y < T(0) || coord.x + coord.y > det) {
         return false;
     }
 
-    // 计算距离
+    /* 计算距离
+     */
     intersectionDistance = dot(v31, q);
 
-    // 计算纹理坐标差值
+    /* 计算纹理坐标差值
+     */
     float inv_det = 1.0f / det;
     intersectionDistance *= inv_det;
     if (intersectionDistance < constants<T>::epsilon) {

@@ -14,7 +14,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 template<size_t N, typename T>
 GLM_API vec<N, T> radians(const vec<N, T>& v)

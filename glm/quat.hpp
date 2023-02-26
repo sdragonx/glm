@@ -71,11 +71,12 @@ public:
         this->z = c.x * c.y * s.z - s.x * s.y * c.z;
     }
 
-    // 从两个归一化轴创建四元数
-    // u    第一个归一化的轴
-    // v    第二个归一化的轴
-    // 
-    // http://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors
+    /* 从两个归一化轴创建四元数
+     * u    第一个归一化的轴
+     * v    第二个归一化的轴
+     * 
+     * http://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors
+     */
     qua(const vec<3, value_type>& u, const vec<3, value_type>& v);
 
     qua(const mat<3, 3, value_type>& m);

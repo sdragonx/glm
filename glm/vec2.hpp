@@ -13,7 +13,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 #define GLM_VEC2_OPERATION(op)\
     template<typename X>\
@@ -90,19 +90,19 @@ public:
     vec() : x(), y(){ /*void*/ }
 
     template<typename X>
-    vec(X scalar) : x(scalar), y(scalar) { /*void*/ }
+    GLM_EXPLICIT vec(X scalar) : x(scalar), y(scalar) { /*void*/ }
 
     template<typename X>
-    vec(X vx, X vy) : x(vx), y(vy) { /*void*/ }
+    GLM_EXPLICIT vec(X vx, X vy) : x(vx), y(vy) { /*void*/ }
 
     template<typename X>
-    vec(const vec<2, X>& v) : x(v.x), y(v.y) { /*void*/ }
+    GLM_EXPLICIT vec(const vec<2, X>& v) : x(v.x), y(v.y) { /*void*/ }
 
     template<typename X>
-    vec(const vec<3, X>& v) : x(v.x), y(v.y) { /*void*/ }
+    GLM_EXPLICIT vec(const vec<3, X>& v) : x(v.x), y(v.y) { /*void*/ }
 
     template<typename X>
-    vec(const vec<4, X>& v) : x(v.x), y(v.y) { /*void*/ }
+    GLM_EXPLICIT vec(const vec<4, X>& v) : x(v.x), y(v.y) { /*void*/ }
 
     length_t length()const { return ELEMENTS; }
 

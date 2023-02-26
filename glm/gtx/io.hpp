@@ -14,7 +14,7 @@
 
 
 
-namespace glm{
+namespace glm {
 
 template<size_t N, typename T>
 std::ostream& operator<<(std::ostream& out, const vec<N, T>& m)

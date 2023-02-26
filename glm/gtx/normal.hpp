@@ -11,7 +11,7 @@
 
 #include "../vector.hpp"
 
-namespace glm{
+namespace glm {
 
 //
 // vec3 triangleNormal( in vec3, in vec3, in vec3 )
@@ -20,7 +20,7 @@ namespace glm{
 template<typename T>
 inline vec<3, T> triangleNormal(const vec<3, T>& a, const vec<3, T>& b, const vec<3, T>& c)
 {
-    //return normalize(cross(a - b, a - c));    // glm
+    //return normalize(cross(a - b, a - c));// glm
     return normalize(cross(b - a, c - a));
 }
 

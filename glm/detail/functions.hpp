@@ -14,18 +14,10 @@
 
 #include "constants.hpp"
 
-#ifdef min
-    #undef min
-#endif
-
-#ifdef max
-    #undef max
-#endif
-
 
 
 namespace glm {
-	
+
 template<typename T>
 GLM_API T min(const T& x, const T& y)
 {

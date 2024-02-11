@@ -106,7 +106,7 @@ GLM_API vec<N, T> normalize(const vec<N, T>& v)
 template<typename T>
 GLM_API T faceforward(const T& N, const T& I, const T& Nref)
 {
-	return dot(Nref, I) < constants<T>::zero ? N : -N;
+    return dot(Nref, I) < constants<T>::zero ? N : -N;
 }
 
 /* vec3 reflect( in vec3, in vec3 )

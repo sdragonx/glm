@@ -34,6 +34,22 @@ std::ostream& operator<<(std::ostream& out, const vec<N, T>& m)
     return out;
 }
 
+template<size_t N>
+std::ostream& operator<<(std::ostream& out, const vec<N, uint8_t>& m)
+{
+    out << "[ ";
+    for (size_t i = 0; i < N; ++i) {
+        out.width(3);
+        out << static_cast<uint32_t>(m[i]);
+        if (i != N - 1) {
+            out << ", ";
+        }
+    }
+    out << " ]";
+
+    return out;
+}
+
 template<size_t CX, size_t CY, typename T>
 std::ostream& operator<<(std::ostream& out, const mat<CX, CY, T>& m)
 {

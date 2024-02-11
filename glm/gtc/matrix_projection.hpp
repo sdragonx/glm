@@ -35,7 +35,7 @@ GLM_API vec<4, T> project(
 
     /* 映射到 0 ~ 1
      */
-	product = product * constants<T>::half + constants<T>::half;
+    product = product * constants<T>::half + constants<T>::half;
 
     /* 转换到屏幕坐标
      */
@@ -45,9 +45,9 @@ GLM_API vec<4, T> project(
     const T h = static_cast<T>(viewport[3]);
 
     product.x = product.x * w + x;
-	product.y = product.y * h + y;
+    product.y = product.y * h + y;
 
-	return product;
+    return product;
 }
 
 template<typename T, typename V>

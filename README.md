@@ -21,6 +21,9 @@ glm.hpp 里面使用了 using namespace cgl 来暴露 glm 的命名空间。<br>
 
 # 更新历史<br>
 
+## 2024-2-10
+添加和更新四元数操作函数。
+
 ### 2023-2-26
 修复 isinf() isnan() bug，修复一些编译器错误。
 

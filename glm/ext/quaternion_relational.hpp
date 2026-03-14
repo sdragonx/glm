@@ -41,6 +41,6 @@ GLM_API vec<4, bool> notEqual(const qua<T>& x, const qua<T>& y, T epsilon)
     return greaterThanEqual(abs(v), vec<4, T>(epsilon));
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_QUATERNION_RELATIONAL_HPP_20240210220834
+#endif // GLM_QUATERNION_RELATIONAL_HPP_20240210220834

@@ -42,6 +42,6 @@ GLM_API qua<T> rotate(const qua<T>& q, const T& angle, const vec<3, T>& v)
     return q * qua<T>(cosine, axis.x * sine, axis.y * sine, axis.z * sine);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_QUATERNION_TRANSFORM_HPP_20240210222533
+#endif // GLM_QUATERNION_TRANSFORM_HPP_20240210222533

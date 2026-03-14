@@ -257,7 +257,7 @@ GLM_API mat<4, 3, T> mat4x3_mul(const mat<4, 3, T>& m1, const mat<4, 4, T>& m2)
 template<typename T>
 GLM_API mat<3, 4, T> transpose(const mat<4, 3, T>& m)
 {
-     return mat3x4(
+     return mat<3, 4, T>(
         m[0][0], m[1][0], m[2][0], m[3][0],
         m[0][1], m[1][1], m[2][1], m[3][1],
         m[0][2], m[1][2], m[2][2], m[3][2]);
@@ -387,6 +387,6 @@ GLM_API vec<3, T> operator*(const mat<4, 3, T>& m, const vec<4, T>& v)
     return transform(m, v);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_MAT4X3_HPP20220520180809
+#endif // GLM_MAT4X3_HPP20220520180809

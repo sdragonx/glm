@@ -106,6 +106,6 @@ typedef mat<4, 2, float> mat4x2;
 typedef mat<4, 3, float> mat4x3;
 typedef mat<4, 4, float> mat4x4;
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_HPP_20211115201400
+#endif // GLM_HPP_20211115201400

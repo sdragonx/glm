@@ -206,6 +206,6 @@ GLM_API bool intersectRaySphere(
     return false;
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_INTERSECT_HPP_20220127014002
+#endif // GLM_INTERSECT_HPP_20220127014002

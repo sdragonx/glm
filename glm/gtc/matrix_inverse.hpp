@@ -123,6 +123,6 @@ GLM_API mat<4, 4, T> inverse(const mat<4, 4, T>& m)
 }
 
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_MATRIX_INVERSE_HPP_20220213230038
+#endif // GLM_MATRIX_INVERSE_HPP_20220213230038

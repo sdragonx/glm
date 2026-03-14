@@ -25,7 +25,7 @@ vec<3, T> slerp(const vec<3, T>& x, const vec<3, T>& y, const T& a)
     // get cosine of angle between vectors (-1 -> 1)
     T cosAlpha = dot(x, y);
     // get angle (0 -> pi)
-    T alpha = acos(cosalpha);
+    T alpha = acos(cosAlpha);
     // get sine of angle between vectors (0 -> 1)
     T sinAlpha = sin(alpha);
     // this breaks down when sinAlpha = 0, i.e. alpha = 0 or pi
@@ -168,6 +168,6 @@ mat<4, 4, T> orientation(const vec<3, T>& normal, const vec<3, T>& up)
     return rotate(angle, rotationAxis);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_ROTATE_VECTOR_HPP_20211115232106
+#endif // GLM_ROTATE_VECTOR_HPP_20211115232106

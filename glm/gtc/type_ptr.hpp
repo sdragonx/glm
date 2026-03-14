@@ -51,6 +51,6 @@ const T* value_ptr(const mat<CX, CY, T>& m)
     return value_ptr(m[0]);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_TYPE_PTR_HPP_20211116004441
+#endif // GLM_TYPE_PTR_HPP_20211116004441

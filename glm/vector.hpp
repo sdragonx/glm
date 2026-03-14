@@ -9,7 +9,7 @@
 #ifndef GLM_VECTOR_HPP_20211019142137
 #define GLM_VECTOR_HPP_20211019142137
 
-#include "detail/constants.hpp"
+#include "detail/float.hpp"
 
 
 
@@ -55,6 +55,6 @@ public:
     }
 };
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_VECTOR_HPP_20211019142137
+#endif // GLM_VECTOR_HPP_20211019142137

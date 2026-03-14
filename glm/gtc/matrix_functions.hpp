@@ -42,7 +42,7 @@ GLM_API typename mat<CY, CX, T>::col_type column(const mat<CY, CX, T>& m, length
 template<size_t CY, size_t CX, typename T>
 GLM_API bool operator == (const mat<CY, CX, T>& x, const mat<CY, CX, T>& y)
 {
-    for (int i = 0; i < CY; ++i) {
+    for (size_t i = 0; i < CY; ++i) {
         if (x[i] != y[i]) {
             return false;
         }
@@ -53,7 +53,7 @@ GLM_API bool operator == (const mat<CY, CX, T>& x, const mat<CY, CX, T>& y)
 template<size_t CY, size_t CX, typename T>
 GLM_API bool operator != (const mat<CY, CX, T>& x, const mat<CY, CX, T>& y)
 {
-    for (int i = 0; i < CY; ++i) {
+    for (size_t i = 0; i < CY; ++i) {
         if (x[i] == y[i]) {
             return false;
         }
@@ -61,6 +61,6 @@ GLM_API bool operator != (const mat<CY, CX, T>& x, const mat<CY, CX, T>& y)
     return true;
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_MATRIX_FUNCTIONS_HPP_20220225160719
+#endif // GLM_MATRIX_FUNCTIONS_HPP_20220225160719

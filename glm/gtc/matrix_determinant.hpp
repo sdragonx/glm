@@ -61,6 +61,6 @@ GLM_API T determinant(const mat<4, 4, T>& m)
     return a0 * b5 - a1 * b4 + a2 * b3 + a3 * b2 - a4 * b1 + a5 * b0;
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_MATRIX_DETERMINANT_HPP_20220213230145
+#endif // GLM_MATRIX_DETERMINANT_HPP_20220213230145

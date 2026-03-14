@@ -24,6 +24,6 @@ inline vec<3, T> triangleNormal(const vec<3, T>& a, const vec<3, T>& b, const ve
     return normalize(cross(b - a, c - a));
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_NORMAL_HPP_20211231171936
+#endif // GLM_NORMAL_HPP_20211231171936

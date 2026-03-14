@@ -10,6 +10,7 @@
 #define GLM_EULER_ANGLES_HPP_20230325101257
 
 #include "../matrix.hpp"
+#include "../trigonometric.hpp"
 
 
 
@@ -35,10 +36,10 @@ GLM_API mat<4, 4, T> eulerAngleY(const T& angleY)
     T sinY = glm::sin(angleY);
 
     return mat<4, 4, T>(
-        cosY,	T(0),	-sinY,	T(0),
-        T(0),	T(1),	T(0),	T(0),
-        sinY,	T(0),	cosY,	T(0),
-        T(0),	T(0),	T(0),	T(1));
+        cosY, T(0), -sinY, T(0),
+        T(0), T(1), T(0), T(0),
+        sinY, T(0), cosY, T(0),
+        T(0), T(0), T(0), T(1));
 }
 
 template<typename T>
@@ -48,10 +49,10 @@ GLM_API mat<4, 4, T> eulerAngleZ(const T& angleZ)
     T sinZ = glm::sin(angleZ);
 
     return mat<4, 4, T>(
-        cosZ,	sinZ,	T(0), T(0),
-        -sinZ,	cosZ,	T(0), T(0),
-        T(0),	T(0),	T(1), T(0),
-        T(0),	T(0),	T(0), T(1));
+        cosZ, sinZ, T(0), T(0),
+        -sinZ, cosZ, T(0), T(0),
+        T(0), T(0), T(1), T(0),
+        T(0), T(0), T(0), T(1));
 }
 
 template <typename T>
@@ -570,23 +571,23 @@ GLM_API mat<3, 3, T> orientate3(const T& angle)
     return Result;
 }
 
-template<typename T, qualifier Q>
-GLM_API mat<3, 3, T, Q> orientate3(vec<3, T, Q> const& angles)
+template<typename T>
+GLM_API mat<3, 3, T> orientate3(const vec<3, T>& angles)
 {
-    return mat<3, 3, T, Q>(yawPitchRoll(angles.z, angles.x, angles.y));
+    return mat<3, 3, T>(yawPitchRoll(angles.z, angles.x, angles.y));
 }
 
-template<typename T, qualifier Q>
-GLM_API mat<4, 4, T, Q> orientate4(vec<3, T, Q> const& angles)
+template<typename T>
+GLM_API mat<4, 4, T> orientate4(const vec<3, T>& angles)
 {
     return yawPitchRoll(angles.z, angles.x, angles.y);
 }
 
 template<typename T>
-GLM_API void extractEulerAngleXYZ(mat<4, 4, T> const& M, T& t1, T& t2, T& t3)
+GLM_API void extractEulerAngleXYZ(mat<4, 4, T> const& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[2][1], m[2][2]);
-    T C2 = glm::sqrt(m[0][0] * m[0][0] + M[1][0] * m[1][0]);
+    T C2 = glm::sqrt(m[0][0] * m[0][0] +m[1][0] * m[1][0]);
     T T2 = glm::atan2<T>(-m[2][0], C2);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -600,7 +601,7 @@ template <typename T>
 GLM_API void extractEulerAngleYXZ(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[2][0], m[2][2]);
-    T C2 = glm::sqrt(m[0][1] * m[0][1] + M[1][1] * m[1][1]);
+    T C2 = glm::sqrt(m[0][1] * m[0][1] +m[1][1] * m[1][1]);
     T T2 = glm::atan2<T>(-m[2][1], C2);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -614,7 +615,7 @@ template <typename T>
 GLM_API void extractEulerAngleXZX(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[0][2], m[0][1]);
-    T S2 = glm::sqrt(m[1][0] * m[1][0] + M[2][0] * m[2][0]);
+    T S2 = glm::sqrt(m[1][0] * m[1][0] +m[2][0] * m[2][0]);
     T T2 = glm::atan2<T>(S2, m[0][0]);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -628,7 +629,7 @@ template <typename T>
 GLM_API void extractEulerAngleXYX(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[0][1], -m[0][2]);
-    T S2 = glm::sqrt(m[1][0] * m[1][0] + M[2][0] * m[2][0]);
+    T S2 = glm::sqrt(m[1][0] * m[1][0] +m[2][0] * m[2][0]);
     T T2 = glm::atan2<T>(S2, m[0][0]);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -642,7 +643,7 @@ template <typename T>
 GLM_API void extractEulerAngleYXY(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[1][0], m[1][2]);
-    T S2 = glm::sqrt(m[0][1] * m[0][1] + M[2][1] * m[2][1]);
+    T S2 = glm::sqrt(m[0][1] * m[0][1] +m[2][1] * m[2][1]);
     T T2 = glm::atan2<T>(S2, m[1][1]);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -656,7 +657,7 @@ template <typename T>
 GLM_API void extractEulerAngleYZY(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[1][2], -m[1][0]);
-    T S2 = glm::sqrt(m[0][1] * m[0][1] + M[2][1] * m[2][1]);
+    T S2 = glm::sqrt(m[0][1] * m[0][1] +m[2][1] * m[2][1]);
     T T2 = glm::atan2<T>(S2, m[1][1]);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -670,7 +671,7 @@ template <typename T>
 GLM_API void extractEulerAngleZYZ(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[2][1], m[2][0]);
-    T S2 = glm::sqrt(m[0][2] * m[0][2] + M[1][2] * m[1][2]);
+    T S2 = glm::sqrt(m[0][2] * m[0][2] +m[1][2] * m[1][2]);
     T T2 = glm::atan2<T>(S2, m[2][2]);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -684,7 +685,7 @@ template <typename T>
 GLM_API void extractEulerAngleZXZ(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[2][0], -m[2][1]);
-    T S2 = glm::sqrt(m[0][2] * m[0][2] + M[1][2] * m[1][2]);
+    T S2 = glm::sqrt(m[0][2] * m[0][2] +m[1][2] * m[1][2]);
     T T2 = glm::atan2<T>(S2, m[2][2]);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -698,7 +699,7 @@ template <typename T>
 GLM_API void extractEulerAngleXZY(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[1][2], m[1][1]);
-    T C2 = glm::sqrt(m[0][0] * m[0][0] + M[2][0] * m[2][0]);
+    T C2 = glm::sqrt(m[0][0] * m[0][0] +m[2][0] * m[2][0]);
     T T2 = glm::atan2<T>(-m[1][0], C2);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -712,7 +713,7 @@ template <typename T>
 GLM_API void extractEulerAngleYZX(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(-m[0][2], m[0][0]);
-    T C2 = glm::sqrt(m[1][1] * m[1][1] + M[2][1] * m[2][1]);
+    T C2 = glm::sqrt(m[1][1] * m[1][1] +m[2][1] * m[2][1]);
     T T2 = glm::atan2<T>(m[0][1], C2);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -726,7 +727,7 @@ template <typename T>
 GLM_API void extractEulerAngleZYX(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(m[0][1], m[0][0]);
-    T C2 = glm::sqrt(m[1][2] * m[1][2] + M[2][2] * m[2][2]);
+    T C2 = glm::sqrt(m[1][2] * m[1][2] +m[2][2] * m[2][2]);
     T T2 = glm::atan2<T>(-m[0][2], C2);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -740,7 +741,7 @@ template <typename T>
 GLM_API void extractEulerAngleZXY(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
 {
     T T1 = glm::atan2<T>(-m[1][0], m[1][1]);
-    T C2 = glm::sqrt(m[0][2] * m[0][2] + M[2][2] * m[2][2]);
+    T C2 = glm::sqrt(m[0][2] * m[0][2] +m[2][2] * m[2][2]);
     T T2 = glm::atan2<T>(m[1][2], C2);
     T S1 = glm::sin(T1);
     T C1 = glm::cos(T1);
@@ -750,6 +751,6 @@ GLM_API void extractEulerAngleZXY(const mat<4, 4, T>& m, T& t1, T& t2, T& t3)
     t3 = T3;
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_EULER_ANGLES_HPP_20230325101257
+#endif // GLM_EULER_ANGLES_HPP_20230325101257

@@ -162,6 +162,6 @@ GLM_API vec<4, bool> isinf(const qua<T>& x)
     return vec<4, bool>(isinf(x.x), isinf(x.y), isinf(x.z), isinf(x.w));
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_QUATERNION_COMMON_HPP_20240210221533
+#endif // GLM_QUATERNION_COMMON_HPP_20240210221533

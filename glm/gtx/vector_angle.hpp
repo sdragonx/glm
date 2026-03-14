@@ -15,6 +15,6 @@ namespace glm {
 
 
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_VECTOR_ANGLE_HPP_20220101014256
+#endif // GLM_VECTOR_ANGLE_HPP_20220101014256

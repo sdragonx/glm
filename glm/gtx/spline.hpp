@@ -49,6 +49,6 @@ vec<N, T> cubic(const vec<N, T>& v1, const vec<N, T>& v2, const vec<N, T>& v3, c
     return ((v1 * s + v2) * s + v3) * s + v4;
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_SPLINE_HPP_20240118211121
+#endif // GLM_SPLINE_HPP_20240118211121

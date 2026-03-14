@@ -142,7 +142,7 @@ GLM_INS_API void mat4_transform_impl(const float* m, const float* v, float* dest
     }
 }
 
-#endif// GLM_HAVE_INSTRUCTIONS
+#endif // GLM_HAVE_INSTRUCTIONS
 
 
 #if defined(GLM_HAVE_INSTRUCTIONS) || defined(GLM_HAVE_INLINE_INSTRUCTIONS)
@@ -161,8 +161,8 @@ GLM_API vec<4, float> transform(const mat<4, 4, float>& m, const vec<4, float>& 
 }
 #endif
 
-#endif// GLM_ENABLE_INSTRUCTIONS
+#endif // GLM_ENABLE_INSTRUCTIONS
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_SIMD_MAT4_HPP_20211118172823
+#endif // GLM_SIMD_MAT4_HPP_20211118172823

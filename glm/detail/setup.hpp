@@ -11,7 +11,7 @@
 
 #if defined(min) || defined(max)
     #if defined(_INC_WINDOWS)
-        #pragma message define NOMINMAX before include <windows.h>
+        #pragma message define NOMINMAX before include < windows.h>
     #endif
 #endif
 
@@ -27,6 +27,8 @@
 #include <cmath>
 #include <float.h>
 #include <limits>
+
+// clang-format off
 
 #if defined(_MSC_VER)
     #if (_MSC_VER < 1300)
@@ -63,10 +65,10 @@
 
 #define GLM_VERSION_MAJOR           0
 #define GLM_VERSION_MINOR           4
-#define GLM_VERSION_PATCH           0
+#define GLM_VERSION_PATCH           1
 #define GLM_VERSION_REVISION        0
 #define GLM_VERSION                 (GLM_VERSION_MAJOR * 1000 + GLM_VERSION_MINOR * 100 + GLM_VERSION_PATCH * 10 + GLM_VERSION_REVISION)
-#define GLM_VERSION_MESSAGE         "GLM: version 0.4.0.0 (c++98)"
+#define GLM_VERSION_MESSAGE         "glm v0.4.1.0 (c++98)"
 
 #define GLM_SETUP_INCLUDED          GLM_VERSION
 
@@ -94,7 +96,7 @@
 #if defined(_MSC_VER)
     #define GLM_PLATFORM_MSVC
 #elif defined(__BORLANDC__)
-    #define GLM_PLATFORM_CBUILDER
+    #define GLM_PLATFORM_BCC
 #elif defined(__GNUC__)
     #define GLM_PLATFORM_GNUC
 #else
@@ -134,6 +136,13 @@
     #endif
 #endif
 
+// static_assert
+#if defined(GLM_NATIVE_CPP11_SUPPORT)
+    #define GLM_STATIC_ASSERT(x, message) static_assert(x, message)
+#else
+    #define GLM_STATIC_ASSERT(x, message) typedef char __CASSERT__##__LINE__[(x) ? 1 : -1]
+#endif
+
 //
 // types
 //
@@ -158,6 +167,8 @@
     #define GLM_EXPLICIT
 #endif
 
+// clang-format on
+
 namespace glm {
 
 // int type
@@ -174,9 +185,11 @@ typedef uint64_t uint64;
 typedef size_t length_t;
 
 // object type
-template<length_t N, typename T> class vec;
-template<length_t CX, length_t CY, typename T> class mat;
+template<length_t N, typename T>
+class vec;
+template<length_t CX, length_t CY, typename T>
+class mat;
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_SETUP_HPP_20211115221355
+#endif // GLM_SETUP_HPP_20211115221355

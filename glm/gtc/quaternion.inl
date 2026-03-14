@@ -202,6 +202,6 @@ GLM_API qua<T> quatLookAt(const vec<3, T>& direction, const vec<3, T>& up)
     return quatLookAtRH(direction, up);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_QUATERNION_FUNCTIONS_HPP_20220220180101
+#endif // GLM_QUATERNION_FUNCTIONS_HPP_20220220180101

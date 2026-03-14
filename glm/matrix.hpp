@@ -74,6 +74,6 @@ public:
     }
 };
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_MATRIX_HPP_20201027020552
+#endif // GLM_MATRIX_HPP_20201027020552

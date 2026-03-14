@@ -18,7 +18,7 @@
     #define GLM_HAVE_INSTRUCTIONS
     #include <xmmintrin.h>
 
-#elif defined(GLM_PLATFORM_CBUILDER) || (defined(GLM_PLATFORM_MSVC) && defined(GLM_PLATFORM_X86))
+#elif defined(CGL_PLATFORM_BCC) || (defined(GLM_PLATFORM_MSVC) && defined(GLM_PLATFORM_X86))
 
     #define GLM_HAVE_INLINE_INSTRUCTIONS
 

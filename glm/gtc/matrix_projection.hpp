@@ -111,6 +111,6 @@ vec<3, T> unProject(const vec<3, T>& win,
     return unProject(vec<4, T>(win, constants<T>::one), modelview, projection, viewport);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_MATRIX_PROJECTION_HPP_20211113214849
+#endif // GLM_MATRIX_PROJECTION_HPP_20211113214849

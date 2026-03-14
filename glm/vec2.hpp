@@ -130,6 +130,6 @@ GLM_VEC2_OPERATOR_COMMON(/);
 #undef GLM_VEC2_OPERATION
 #undef GLM_VEC2_OPERATOR_COMMON
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_VEC2_HPP_20211019154130
+#endif // GLM_VEC2_HPP_20211019154130

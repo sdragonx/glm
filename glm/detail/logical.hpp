@@ -68,6 +68,6 @@ GLM_API bool notEqual(const T& x, const T& y)
     return type_traits<T>::notEqual(x, y);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_LOGICAL_HPP_20211119132746
+#endif // GLM_LOGICAL_HPP_20211119132746

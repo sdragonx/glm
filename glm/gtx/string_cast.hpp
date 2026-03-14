@@ -24,6 +24,6 @@ std::string to_string(const T& value)
     return stm.str();
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_STRING_CAST_HPP_20211115233137
+#endif // GLM_STRING_CAST_HPP_20211115233137

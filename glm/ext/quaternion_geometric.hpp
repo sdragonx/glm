@@ -54,6 +54,6 @@ GLM_API qua<T> cross(const qua<T>& q1, const qua<T>& q2)
         q1.w * q2.z + q1.z * q2.w + q1.x * q2.y - q1.y * q2.x);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_QUATERNION_GEOMETRIC_HPP_20240210221926
+#endif // GLM_QUATERNION_GEOMETRIC_HPP_20240210221926

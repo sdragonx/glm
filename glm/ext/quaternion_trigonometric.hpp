@@ -44,6 +44,6 @@ GLM_API qua<T> angleAxis(T const& angle, vec<3, T> const& v)
     return qua<T>(glm::cos(a * static_cast<T>(0.5)), v * s);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_QUATERNION_TRIGONOMETRIC_HPP_20220220175503
+#endif // GLM_QUATERNION_TRIGONOMETRIC_HPP_20220220175503

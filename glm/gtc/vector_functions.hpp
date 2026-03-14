@@ -19,7 +19,7 @@ namespace glm {
 template<size_t N, typename T>
 GLM_API vec<N, bool> isinf(const vec<N, T>& v)
 {
-    return compute<bool, N, T>::invoke(glm::isinf<T>, v);
+    return compute<bool, N, T>::invoke(isinf<T>, v);
 }
 
 template<size_t N, typename T>
@@ -160,6 +160,6 @@ GLM_API vec<N, T> smoothstep(const T& edge0, const T& edge1, const vec<N, T>& x)
     return compute<T, N, T>::invoke(smoothstep<T>, vec<N, T>(edge0), vec<N, T>(edge1), x);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_VECTOR_FUNCTIONS_HPP_20220225040416
+#endif // GLM_VECTOR_FUNCTIONS_HPP_20220225040416

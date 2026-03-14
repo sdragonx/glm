@@ -312,6 +312,6 @@ GLM_API mat<4, 4, T> lookAt(const vec<3, T>& eye, const vec<3, T>& center, const
     return lookAtRH<T>(eye, center, up);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_MATRIX_TRANSFORM_HPP_20211113214455
+#endif // GLM_MATRIX_TRANSFORM_HPP_20211113214455

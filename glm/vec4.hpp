@@ -141,6 +141,6 @@ GLM_VEC4_OPERATOR_COMMON(/);
 #undef GLM_VEC4_OPERATION
 #undef GLM_VEC4_OPERATOR_COMMON
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_VEC4_HPP_20211019154150
+#endif // GLM_VEC4_HPP_20211019154150

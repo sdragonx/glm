@@ -72,9 +72,9 @@ GLM_INS_API void vec4_mul(const float* v1, float n, float* dest)
 }
 */
 
-#endif// GLM_HAVE_INSTRUCTIONS
-#endif// GLM_ENABLE_INSTRUCTIONS
+#endif // GLM_HAVE_INSTRUCTIONS
+#endif // GLM_ENABLE_INSTRUCTIONS
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_SIMD_VEC4_HPP_20211118182640
+#endif // GLM_SIMD_VEC4_HPP_20211118182640

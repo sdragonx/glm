@@ -73,6 +73,6 @@ GLM_API vec<N, T> atan(const vec<N, T>& x, const vec<N, T>& y)
     return compute<T, N, T>::invoke(atan<T>, x, y);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_VECTOR_TRIGONOMETRIC_HPP_20220226042307
+#endif // GLM_VECTOR_TRIGONOMETRIC_HPP_20220226042307

@@ -9,7 +9,7 @@
 #ifndef GLM_CONSTANTS_HPP_20211113221026
 #define GLM_CONSTANTS_HPP_20211113221026
 
-#include "float.hpp"
+#include "setup.hpp"
 
 
 
@@ -34,7 +34,7 @@ public:
 
     const static T pi;
     const static T radians;
-    const static T inv_radians;
+    const static T invRadians;
 };
 
 
@@ -61,7 +61,7 @@ template<typename T>
 const T constants<T>::radians = T(0.017453292519943295769);
 
 template<typename T>
-const T constants<T>::inv_radians = T(57.295779513082320876798);
+const T constants<T>::invRadians = T(57.295779513082320876798);
 
 //
 // functions
@@ -115,6 +115,6 @@ inline T cos_one_over_two()
     return T(0.877582561890372716130286068203503191);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_CONSTANTS_HPP_20211113221026
+#endif // GLM_CONSTANTS_HPP_20211113221026

@@ -90,6 +90,6 @@ GLM_API bool operator != (const vec<N, T>& x, const vec<N, T>& y)
     return logical_or<N, T>::invoke(type_traits<T>::notEqual, x, y);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_VECTOR_LOGICAL_HPP_20220221001919
+#endif // GLM_VECTOR_LOGICAL_HPP_20220221001919

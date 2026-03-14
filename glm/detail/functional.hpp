@@ -353,6 +353,6 @@ struct logical_or<4, T>
     }
 };
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_FUNCTIONAL_HPP_20211116111721
+#endif // GLM_FUNCTIONAL_HPP_20211116111721

@@ -82,6 +82,6 @@ std::ostream& operator<<(std::ostream& out, const mat<CX, CY, T>& m)
     return out;
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_IO_HPP_20211115201242
+#endif // GLM_IO_HPP_20211115201242

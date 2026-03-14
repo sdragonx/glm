@@ -66,7 +66,8 @@ GLM_API T floor(const T& value)
     return static_cast<T>(std::floor(static_cast<double>(value)));
 }
 
-// 取小数部分
+/* 取小数部分
+ */
 template <class T>
 GLM_API T fract(const T& value)
 {
@@ -141,6 +142,6 @@ GLM_API T smoothstep(const T& edge0, const T& edge1, const T& x)
     return tmp * tmp * (T(3) - T(2) * tmp);
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_FUNCTIONS_HPP_20211116114517
+#endif // GLM_FUNCTIONS_HPP_20211116114517

@@ -24,7 +24,7 @@ GLM_API T radians(T value)
 template<typename T>
 GLM_API T degrees(T value)
 {
-    return value * constants<T>::inv_radians;
+    return value * constants<T>::invRadians;
 }
 
 template<typename T>
@@ -67,11 +67,11 @@ GLM_API T atan(const T& value)
 }
 
 template<typename T>
-GLM_API T atan(const T& x, const T& y)
+GLM_API T atan2(const T& x, const T& y)
 {
     return static_cast<T>(std::atan2(static_cast<double>(x), static_cast<double>(y)));
 }
 
-}// end namespace glm
+} // end namespace glm
 
-#endif// GLM_TRIGONOMETRIC_HPP_20211113230805
+#endif // GLM_TRIGONOMETRIC_HPP_20211113230805

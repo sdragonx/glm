@@ -65,10 +65,10 @@
 
 #define GLM_VERSION_MAJOR           0
 #define GLM_VERSION_MINOR           4
-#define GLM_VERSION_PATCH           1
+#define GLM_VERSION_PATCH           2
 #define GLM_VERSION_REVISION        0
 #define GLM_VERSION                 (GLM_VERSION_MAJOR * 1000 + GLM_VERSION_MINOR * 100 + GLM_VERSION_PATCH * 10 + GLM_VERSION_REVISION)
-#define GLM_VERSION_MESSAGE         "glm v0.4.1.0 (c++98)"
+#define GLM_VERSION_MESSAGE         "glm v0.4.2.0 (c++98)"
 
 #define GLM_SETUP_INCLUDED          GLM_VERSION
 
